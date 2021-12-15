@@ -6,6 +6,7 @@
 
 html{
     font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -64,6 +65,7 @@ a{
     justify-content: space-evenly;
     height: 40vh;
     margin-top: 10rem;
+    text-align: center;
 }
 
 .btn{
@@ -96,11 +98,20 @@ span{
     height: 70vh;
     align-items: flex-start;
     padding: 0 8rem;
+    background-color: transparent;
 }
 
 .features{
     display: flex;
     flex-direction: row;
+    gap: 0.5rem;
+}
+
+.feature{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.025), -5px -5px 20px rgba(0, 0, 0, 0.025);
+    border: 1px solid #f7f7f7;
+    width: 330px;
+    padding: 3rem 2rem;
 }
 
 
