@@ -9,7 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Open+Sans:wght@300;400;600;800&display=swap"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <title>Practice Page</title>
 </head>
@@ -17,9 +18,9 @@
 
 <header>
     <div class="container">
-        <a>
+        <a href="index.html">
             <img class="logo"
-                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo%21_Logo.svg/1024px-Logo%21_Logo.svg.png"
+                 src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b680f7ddc6fa8394a12fc7f_logo-spoon-white.svg"
                  alt="some image">
         </a>
         <nav class="nav-bar">
@@ -28,13 +29,13 @@
                     <a href="#features" class="nav-link">Feature</a>
                 </li>
                 <li>
-                    <a href="" class="nav-link">Premium</a>
+                    <a href="#premium" class="nav-link">Premium</a>
                 </li>
                 <li>
                     <a href="" class="nav-link">Pricing</a>
                 </li>
                 <li>
-                    <a href="" class="nav-link">About</a>
+                    <a href="#about" class="nav-link">About</a>
                 </li>
                 <li>
                     <a href="" class="nav-link">Sign in</a>
@@ -65,18 +66,21 @@
             <div>
                 <ul class="features">
                     <li class="feature">
-                        <img src="" alt="first image">
+                        <img src="https://uploads-ssl.webflow.com/5b681be5dc6fa89a65131967/5b681bfb5b239d8246368808_icon-feature-01.svg"
+                             alt="first image">
                         <h3>Pro ad constituto</h3>
                         <p class="mono grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum,
                             nesciunt?</p>
                     </li>
                     <li class="feature">
-                        <img src="" alt="second image">
+                        <img src="https://uploads-ssl.webflow.com/5b681be5dc6fa89a65131967/5b681c235fc94c975348ed36_icon-feature-02.svg"
+                             alt="second image">
                         <h3>Eam commodo</h3>
                         <p class="mono grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, rem.</p>
                     </li>
                     <li class="feature">
-                        <img src="" alt="third image">
+                        <img src="https://uploads-ssl.webflow.com/5b681be5dc6fa89a65131967/5b681c455b239d0903368830_icon-feature-03.svg"
+                             alt="third image">
                         <h3>Refformidans eis</h3>
                         <p class="mono grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, illum!</p>
                     </li>
@@ -86,45 +90,53 @@
     </section>
     <section class="section-padding image-section">
         <div class="container">
-            <div class="image-slider">
-                <img src="" alt="some image that should be replaced with the image slider, need clarification">
+            <div>
+                <img class="image-slider" src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b68266cf109cfb76fd95be9_image-slider-01.jpg"
+                     alt="some image that should be replaced with the image slider, need clarification" >
             </div>
         </div>
     </section>
-    <section class="section-padding">
+    <section class="section-padding" id="about">
         <div class="container flex-column about-div">
             <p class="feature-description about"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
-            <a href="">MORE ABOUT US</a>
+            <a style="color: mediumseagreen" href="">MORE ABOUT US</a>
         </div>
     </section>
-    <section class="section-padding">
-        <div class="container">
-            <div>
-                <img src="" alt="image to the left">
+    <section id="premium" class="section-padding">
+        <div class=" flex-column premium">
+            <div class="container info">
+                <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b683ebb5fc94c7452490bd2_image-row-01.jpg"
+                     alt="image to the left"
+                     class="premium-img">
                 <div class="information-div">
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nobis,
+                    <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
+                    <p class="mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nobis,
                         placeat quas quasi veniam veritatis.</p>
                 </div>
             </div>
-            <div>
+            <div class="container info">
                 <div class="information-div">
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
+                    <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
+                    <p class="mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
                         doloribus repellendus voluptatem? Explicabo, ipsum quis.</p>
                 </div>
-                <img src="" alt="image to the right">
+                <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6838dff109cf4aa0d96f64_image-row-02.jpg"
+                     alt="image to the right"
+                     class="premium-img">
             </div>
-            <h3>Wanna know more about the Premium deal?</h3>
-            <a href="">See the full range of premium</a>
+            <h3 style="text-align: center">Wanna know more about the Premium deal?</h3>
+            <a style="text-align: center; color: mediumseagreen" href="">See the full range of premium</a>
         </div>
     </section>
-    <section class="section-padding">
-        <div class="container">
-            <div>
-                <h3>Party on </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta perspiciatis quod voluptatibus?</p>
+    <section class="section-padding ">
+        <div class="container other">
+            <div class="">
+                <h3 style="color: mediumseagreen">Party on </h3>
+                <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
             </div>
             <a href="" class="btn btn-primary">Get Started</a>
         </div>
@@ -133,7 +145,9 @@
 </main>
 
 <footer>
-    <div class="container"></div>
+    <div class="container">
+
+    </div>
 </footer>
 
 </body>

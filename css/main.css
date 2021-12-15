@@ -5,14 +5,13 @@
 }
 
 html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Libre Franklin', sans-serif;
     scroll-behavior: smooth;
 }
 
 header {
-    height: 70vh;
-    background-image: url("http://www.wincore.ru/uploads/posts/2015-09/1442563344_1-18.jpg");
-    background-repeat: no-repeat;
+    height: 100vh;
+    background-image: url("https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6817d95fc94c67bf48eaab_image-header.jpg");
     color: white;
 }
 
@@ -37,6 +36,7 @@ h1 {
 
 .mono {
     font-family: 'Space Mono', monospace;
+    padding-top: 1rem;
 }
 
 .logo {
@@ -85,9 +85,18 @@ a {
     border: 2px solid white;
 }
 
+.btn.btn-header:hover {
+    background-color: white;
+    color: black;
+}
+
 .btn.btn-primary {
     background-color: mediumseagreen;
     border-radius: 0.25rem;
+}
+
+.btn.btn-primary:hover {
+    background-color: forestgreen;
 }
 
 .feature-title {
@@ -109,10 +118,11 @@ span {
     color: black;
 }
 
+
 .container.flex-column {
     flex-direction: column;
     justify-content: space-evenly;
-    height: 70vh;
+    height: 100vh;
     align-items: flex-start;
     padding: 0 8rem;
     background-color: transparent;
@@ -131,15 +141,52 @@ span {
     padding: 3rem 2rem;
 }
 
+h3 {
+    padding: 1rem 0;
+}
+.image-slider{
+    margin-left: 1vw;
+    width: 90vw;
+}
+
 .container.flex-column.about-div {
     align-items: center;
+    height: 100vh;
 }
 
 .about {
-    padding: 0 3rem;
+    padding: 0;
     text-align: center;
 }
 
+.premium-img {
+    height: 330px;
+}
+
+.flex-column.premium {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 2rem;
+}
+
+.container.info {
+    height: 100vh;
+    gap: 1rem;
+}
+
+.information-div {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+.container.other {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+}
 
 @media (max-width: 789px) {
     .feature-title {
@@ -172,7 +219,5 @@ span {
 }
 
 @media (max-width: 320px) {
-    /*.feature {*/
-    /*    width: 260px;*/
-    /*}*/
+
 }
