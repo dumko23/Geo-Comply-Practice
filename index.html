@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Open+Sans:wght@300;400;600;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Open+Sans:wght@300;400;600;800;&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <title>Practice Page</title>
@@ -17,13 +17,15 @@
 <body>
 
 <header>
-    <div class="container">
+    <div class="container hat">
         <a href="index.html">
             <img class="logo"
                  src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b680f7ddc6fa8394a12fc7f_logo-spoon-white.svg"
                  alt="logo">
         </a>
         <nav class="nav-bar">
+            <input type="checkbox" name="nav-menu" id="hamburger">
+            <label for="hamburger">Menu</label>
             <ul class="flex-container">
                 <li>
                     <a href="#features" class="nav-link">Feature</a>
@@ -37,13 +39,13 @@
                 <li>
                     <a href="#about" class="nav-link">About</a>
                 </li>
-                <li>
+                <li class="dot">
                     &#149
                 </li>
                 <li>
                     <a href="" class="nav-link">Sign in</a>
                 </li>
-                <li>
+                <li class="li-btn">
                     <a href="" class="btn btn-header">Get Started</a>
                 </li>
             </ul>
@@ -107,6 +109,7 @@
         </div>
     </section>
     <section id="premium" class="section-padding">
+        <hr>
         <div class=" flex-column premium">
             <div class="container info">
                 <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b683ebb5fc94c7452490bd2_image-row-01.jpg"
@@ -115,26 +118,27 @@
                 <div class="information-div">
                     <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
                         consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
-                    <p class="mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nobis,
+                    <p class="mono grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nobis,
                         placeat quas quasi veniam veritatis.</p>
                 </div>
             </div>
-            <div class="container info">
-                <div class="information-div">
-                    <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
-                    <p class="mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-                        doloribus repellendus voluptatem? Explicabo, ipsum quis.</p>
-                </div>
+            <div class="container info reverse">
                 <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6838dff109cf4aa0d96f64_image-row-02.jpg"
                      alt="image to the right"
                      class="premium-img">
+                <div class="information-div">
+                    <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
+                    <p class="mono grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
+                        doloribus repellendus voluptatem? Explicabo, ipsum quis.</p>
+                </div>
             </div>
             <h3 style="text-align: center">Wanna know more about the Premium deal?</h3>
             <a style="text-align: center; color: mediumseagreen" href="">See the full range of premium</a>
         </div>
     </section>
     <section class="section-padding ">
+        <hr>
         <div class="container other">
             <div class="other-div">
                 <h3 style="color: mediumseagreen">Party on </h3>
@@ -157,56 +161,59 @@
             </a>
             <p style="color: grey; font-size: 0.75rem">&#169 2018 Spoon Inc, All rights reserved</p>
         </div>
-        <div class="footer-links-div">
-            <ul class="footer-links">
-                <li class="f-link">
-                    <a href="" class="f-a">Features</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">Premium</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">Pricing</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">About</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">Blog</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">Contact</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">Image License Info</a>
-                </li>
-                <li class="f-link">
-                    <a href="" class="f-a">Powered by WebFlow</a>
-                </li>
-            </ul>
+        <div class="div-handler">
+            <div class="footer-links-div">
+                <ul class="footer-links">
+                    <li class="f-link">
+                        <a href="" class="f-a">Features</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a">Premium</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a">Pricing</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a">About</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a">Blog</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a">Contact</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a">Image License Info</a>
+                    </li>
+                    <li class="f-link">
+                        <a href="" class="f-a" style="flex: 2">Powered by WebFlow</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="container">
+                    <li>
+                        <a href="">
+                            <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b68459df109cf0cf0d97867_icon-facebook.svg"
+                                 alt="link to Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b684641659acabed7c8b74d_icon-twitter.svg"
+                                 alt="link to Twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6846535b239d7ba536b158_icon-instagram.svg"
+                                 alt="link to Instagram">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul class="container">
-                <li>
-                    <a href="">
-                        <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b68459df109cf0cf0d97867_icon-facebook.svg"
-                             alt="link to Facebook">
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b684641659acabed7c8b74d_icon-twitter.svg"
-                             alt="link to Twitter">
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6846535b239d7ba536b158_icon-instagram.svg"
-                             alt="link to Instagram">
-                    </a>
-                </li>
-            </ul>
-        </div>
+
     </div>
 </footer>
 
