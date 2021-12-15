@@ -7,3 +7,37 @@
 html{
     font-family: 'Open Sans', sans-serif;
 }
+
+header{
+    height: 90vh;
+    background-image: url("https://cs12.pikabu.ru/post_img/big/2021/07/16/9/1626446618131620823.jpg");
+    color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 1rem;
+}
+
+.container.hero{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
