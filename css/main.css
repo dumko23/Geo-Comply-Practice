@@ -9,8 +9,9 @@ html{
 }
 
 header{
-    height: 90vh;
-    background-image: url("https://cs12.pikabu.ru/post_img/big/2021/07/16/9/1626446618131620823.jpg");
+    height: 70vh;
+    background-image: url("http://www.wincore.ru/uploads/posts/2015-09/1442563344_1-18.jpg");
+    background-repeat: no-repeat;
     color: white;
 }
 
@@ -20,6 +21,7 @@ header{
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
+    z-index: 2;
 }
 
 .flex-container{
@@ -72,4 +74,52 @@ a{
 .btn.btn-primary{
     background-color: mediumseagreen;
     border-radius: 0.25rem;
+}
+
+.feature-title{
+    width: 50%;
+}
+
+
+.feature-description{
+    font-size: 2rem;
+    color: grey;
+}
+
+span{
+    color: black;
+}
+
+.container.flex-column{
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+    align-items: flex-start;
+    padding: 0 8rem;
+}
+
+.features{
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media (max-width: 789px){
+    .feature-title{
+        width: 100%;
+    }
+
+    .feature-description{
+        font-size: 1rem;
+    }
+
+    .container.flex-column{
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 600px){
+    .features{
+        flex-direction: column;
+    }
 }
