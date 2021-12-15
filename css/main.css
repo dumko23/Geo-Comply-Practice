@@ -188,6 +188,39 @@ h3 {
     height: 50vh;
 }
 
+.other-div {
+    width: 50%;
+}
+
+.container.footer {
+    background-color: #0a0e1a;
+    height: 50vh;
+    justify-content: flex-start;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 150px;
+}
+
+.f-link {
+    margin: 1rem 0;
+    font-size: 0.75rem;
+}
+
+.f-a {
+    color: white;
+}
+
+.footer-links-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 @media (max-width: 789px) {
     .feature-title {
         width: 100%;
