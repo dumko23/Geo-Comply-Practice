@@ -60,6 +60,10 @@ li {
     color: white;
 }
 
+.nav-link:hover {
+    color: mediumseagreen;
+}
+
 .nav-flex {
     color: white;
 }
