@@ -153,6 +153,7 @@ h3 {
 .image-slider {
     margin-left: 1vw;
     width: 90vw;
+
 }
 
 .container.flex-column.about-div {
@@ -303,6 +304,30 @@ input[type="checkbox"] {
     transform: rotate(90deg);
 }
 
+.slider-handle {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: 60vh;
+    scroll-behavior: smooth;
+}
+
+.container.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.green-line {
+    display: inline-block;
+    width: 2rem;
+    height: 2px;
+    border: 1px solid mediumseagreen;
+    background-color: green;
+    margin-left: 2rem;
+}
 
 @media (max-width: 789px) {
     .feature-title {
@@ -381,10 +406,6 @@ input[type="checkbox"] {
         align-items: flex-start;
     }
 
-    .container.hero {
-        margin-top: 8rem;
-    }
-
     .nav-btn {
         display: flex;
         margin-top: 1rem;
@@ -402,6 +423,10 @@ input[type="checkbox"] {
     input[type="checkbox"]:checked ~ label + .flex-container {
         display: flex;
         flex-direction: column;
+    }
+
+    .logo {
+        margin-left: 2rem;
     }
 }
 
@@ -425,10 +450,23 @@ input[type="checkbox"] {
     .f-a {
         padding: 0.5rem 0;
     }
+
+    .container.slider {
+        height: 30vh;
+        margin-top: 4rem;
+    }
 }
 
 @media (max-width: 375px) {
     .container.footer {
         padding-top: 2rem;
+    }
+
+    .premium-img {
+        width: 260px;
+    }
+
+    .container.slider {
+        height: 20vh;
     }
 }

@@ -96,10 +96,28 @@
         </div>
     </section>
     <section class="section-padding image-section">
-        <div class="container">
-            <div>
-                <img class="image-slider" src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b68266cf109cfb76fd95be9_image-slider-01.jpg"
-                     alt="some image that should be replaced with the image slider, need clarification" >
+        <div class="container slider">
+            <div class="slider-handle">
+                <div style="height: auto">
+                    <img id="first-img" class="image-slider"
+                         src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b68266cf109cfb76fd95be9_image-slider-01.jpg"
+                         alt="first image" >
+                </div>
+                <div>
+                    <img id="second-img" class="image-slider"
+                         src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6838dff109cf4aa0d96f64_image-row-02.jpg"
+                         alt="second image" >
+                </div>
+                <div>
+                    <img id="third-img" class="image-slider"
+                         src="https://uploads-ssl.webflow.com/5b680680f109cf5a2fd941ab/5b6afd6941c616fe3769bdf2_image-premium-banner-2.jpg"
+                         alt="third image" >
+                </div>
+            </div>
+            <div style="margin-top: 1rem">
+                <a class="slider-link" href="#first-img">&#9675</a>
+                <a class="slider-link" href="#second-img">&#9675</a>
+                <a class="slider-link" href="#third-img">&#9675</a>
             </div>
         </div>
     </section>
@@ -136,14 +154,14 @@
                 </div>
             </div>
             <h3 style="text-align: center">Wanna know more about the Premium deal?</h3>
-            <a style="text-align: center; color: mediumseagreen" href="">See the full range of premium</a>
+            <a style="text-align: center; color: mediumseagreen; text-transform: uppercase" href="">See the full range of premium</a>
         </div>
     </section>
     <section class="section-padding ">
         <hr>
         <div class="container other">
             <div class="other-div">
-                <h3 style="color: mediumseagreen">Party on </h3>
+                <h3 style="color: mediumseagreen; display: flex; flex-direction: row; align-items: center">Party on <span class="green-line"></span></h3>
                 <p class="feature-description"><span>Lorem ipsum dolor sit amet.</span> Lorem ipsum dolor sit amet,
                     consectetur adipisicing elit. Est magni, quae quasi repellat saepe similique.</p>
             </div>
