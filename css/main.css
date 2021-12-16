@@ -251,20 +251,58 @@ input[type="checkbox"] {
     display: none;
 }
 
-nav label {
+.nav-btn {
     display: none;
-    border: 2px solid white;
-    padding: 0.5rem 2rem;
+    align-items: center;
     cursor: pointer;
-    transition: 0.3s;
-    color: white;
+    height: 1rem;
+    width: 3rem;
 }
 
-nav label:hover {
-    color: black;
-    border: 1px solid white;
+
+.nav-btn > span::before,
+.nav-btn > span,
+.nav-btn > span::after {
+    display: block;
+    cursor: pointer;
+    transition: 0.1s;
+    color: white;
     background-color: white;
+    height: 0.5rem;
+    width: 3rem;
+    position: absolute;
 }
+
+.nav-btn > span::before {
+    content: '';
+    top: 1rem;
+
+}
+
+.nav-btn > span::after {
+    content: '';
+    top: 2rem;
+}
+
+#hamburger:checked ~ .nav-btn {
+    margin-top: 2rem;
+}
+
+#hamburger:checked ~ .nav-btn > span {
+
+    transform: rotate(45deg);
+}
+
+#hamburger:checked ~ .nav-btn > span::after {
+    top: 0;
+    transform: rotate(0);
+}
+
+#hamburger:checked ~ .nav-btn > span::before {
+    top: 0;
+    transform: rotate(90deg);
+}
+
 
 @media (max-width: 789px) {
     .feature-title {
@@ -292,7 +330,7 @@ nav label:hover {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 675px) {
     .features {
         flex-direction: column;
     }
@@ -314,10 +352,6 @@ nav label:hover {
         height: auto;
     }
 
-    nav label {
-        display: inline-block;
-    }
-
     nav > .flex-container {
         display: none;
     }
@@ -327,23 +361,45 @@ nav label:hover {
     }
 
     .nav-bar {
-        height: 200px;
+        height: 340px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         width: 200px;
+        z-index: 2;
+
     }
 
-     .li-btn {
+    .flex-container {
+        justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+
+    .container.hat {
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .container.hero {
+        margin-top: 8rem;
+    }
+
+    .nav-btn {
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    .li-btn {
         margin-top: 1.25rem;
     }
 
-     nav li {
-         margin: 0.75rem 0;
-     }
+    nav li {
+        padding: 0.75rem 0;
+    }
 
-    input[type="checkbox"]:checked ~ label + .flex-container{
+    input[type="checkbox"]:checked ~ label + .flex-container {
         display: flex;
         flex-direction: column;
     }
@@ -355,7 +411,7 @@ nav label:hover {
     }
 
     .container.hat {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .flex-container {
