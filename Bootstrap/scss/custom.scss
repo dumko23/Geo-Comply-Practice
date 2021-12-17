@@ -1,6 +1,10 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-.nav-collapse {
+.navbar-collapse {
   justify-content: flex-end;
+}
+
+.custombg {
+  background: sandybrown url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fd4d0de82b2_photo-1439189741837-58720e8d82d5.jpg");
 }
