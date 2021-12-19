@@ -64,6 +64,7 @@
 
 .card-height {
   height: 280px;
+  object-fit: cover;
 }
 
 .card-height-2 {
@@ -88,4 +89,14 @@
 
 .color-relaxation {
   background-color: rgb(74, 174, 194);
+}
+
+.gradient {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.6) 46%, rgba(0, 0, 0, 0.76));
+}
+
+@media (max-width: 320px) {
+  .invis-text {
+    display: none;
+  }
 }
