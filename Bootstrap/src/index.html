@@ -52,38 +52,39 @@
 </div>
 <div class="container-fluid">
     <div class="container">
-        <ul class="nav justify-content-center">
-            <li class="nav-item py-1 px-3 mx-1 my-2 rounded">
+        <ul class="nav justify-content-evenly custom-margin">
+            <li class="nav-item py-1 mx-1 my-2 rounded text-center">
                 <a class="nav-link text-black-50 " aria-current="page" href="#">Nature</a>
             </li>
-            <li class="nav-item py-1 px-3 mx-1 my-2 rounded">
+            <li class="nav-item py-1 mx-1 my-2 rounded text-center">
                 <a class="nav-link text-black-50" href="#">Photography</a>
             </li>
-            <li class="nav-item py-1 px-3 mx-1 my-2 rounded">
-                <a class="nav-link text-black-50" href="#">Relaxation</a>
+            <li class="nav-item py-1 mx-1 my-2 rounded text-center">
+                <a class="nav-link text-black-50 text-center" href="#">Relaxation</a>
             </li>
-            <li class="nav-item py-1 px-3 mx-1 my-2 rounded">
+            <li class="nav-item py-1 mx-1 my-2 rounded text-center">
                 <a class="nav-link text-black-50" href="#">Vacation</a>
             </li>
-            <li class="nav-item py-1 px-3 mx-1 my-2 rounded">
+            <li class="nav-item py-1 mx-1 my-2 rounded text-center">
                 <a class="nav-link text-black-50" href="#">Travel</a>
             </li>
-            <li class="nav-item py-1 px-3 mx-1 my-2 rounded">
+            <li class="nav-item py-1 mx-1 my-2 rounded text-center">
                 <a class="nav-link text-black-50" href="#">Adventure</a>
             </li>
         </ul>
     </div>
 </div>
-<div class="container-fluid custombg-2 border top">
-    <div class="container custom-margin px-5">
+<div class="container-fluid custombg-2 border-top pb-5">
+    <div class="container custom-margin ">
         <p class="fs-4 mt-5 px-3 text-center">Featured posts</p>
         <div class="custom-line"></div>
-        <div class="row">
+        <div class="row g-4 justify-content-center">
             <div class="col-sm">
-                <div class="card bg-dark text-white border-0">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fe3eede82c6_photo-1443926818681-717d074a57af.jpg" class="card-img" alt="...">
+                <div class="card bg-dark text-white border-0 ">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fe3eede82c6_photo-1443926818681-717d074a57af.jpg"
+                         class="card-img card-height" alt="...">
                     <div class="card-img-overlay">
-                        <span class="card-text rounded text-uppercase custombtn p-2 fs-6">Photography</span>
+                        <small class="card-text rounded text-uppercase p-2" style="background-color: #a370f7">Photography</small>
                         <div class="d-inline-flex justify-content-end flex-column card-flex">
                             <h4 class="card-title">The Road Ahead</h4>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -91,9 +92,9 @@
                                 <div class="d-inline-flex  flex-row">
                                     <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7f7389de832c_128-34.jpg"
                                          alt="author" class="author-img">
-                                    <span>Mat Vogels</span>
+                                    <small>Mat Vogels</small>
                                 </div>
-                                <span class="card-text">September 25, 2015</span>
+                                <small class="card-text text-end">September 25, 2015</small>
                             </div>
                         </div>
                     </div>
@@ -102,29 +103,165 @@
             <div class="col-sm">
                 <div class="card bg-dark text-white border-0">
                     <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fb609de82c9_photo-1443304895043-ef30921332c5.jpg"
-                         class="card-img" alt="...">
+                         class="card-img card-height" alt="...">
                     <div class="card-img-overlay">
-                        <span class="card-text rounded text-uppercase custombtn p-2 fs-6">Adventure</span>
+                        <small class="card-text rounded text-uppercase custombtn p-2">Adventure</small>
                         <div class="d-inline-flex justify-content-end flex-column card-flex">
                             <h4 class="card-title ">From Top Down</h4>
-                            <p class="card-text text-dark-50 align-bottom" >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.</p>
                             <div class="d-inline-flex justify-content-between flex-row">
                                 <div class="d-inline-flex  flex-row">
                                     <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
                                          alt="author" class="author-img">
-                                    <span>William Wong</span>
+                                    <small>William Wong</small>
                                 </div>
-                                <span class="card-text">September 25, 2015</span>
+                                <small class="card-text text-end">September 25, 2015</small>
                             </div>
-
                         </div>
-
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="fs-4 mt-5 px-3 text-center">Most Recent</p>
+        <div class="custom-line"></div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-sm-4">
+                <div class="card rounded">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f7cadde82d1_photo-1433854304641-67729357fe18.jpg"
+                         class="card-height-2" alt="">
+                    <div class="card-img-overlay">
+                        <small class="card-text rounded text-uppercase custombtn p-2 bg-warning text-white">Nature</small>
+                    </div>
+                </div>
+                <div class="card-body bg-white border border-top-0">
+                    <h5 class="card-title ">From Top Down</h5>
+                    <small class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</small>
+                </div>
+                <div class="card-footer d-flex justify-content-between flex-row footer-bg border border-top-0">
+                    <div class="d-inline-flex  flex-row">
+                        <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                             alt="author" class="author-img">
+                        <small>William Wong</small>
+                    </div>
+                    <small class="card-text text-end">9/25/2015</small>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fa235de82c7_photo-1431329842981-433c8635c2b9.jpg"
+                         class="card-height-2" alt="">
+                    <div class="card-img-overlay">
+                        <small class="card-text rounded text-uppercase p-2 text-white color-photography">Photography</small>
+                    </div>
+                </div>
+                <div class="card-body border border-top-0">
+                    <h5 class="card-title ">From Top Down</h5>
+                    <small class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</small>
+                </div>
+                <div class="card-footer d-flex justify-content-between flex-row border border-top-0">
+                    <div class="d-inline-flex  flex-row">
+                        <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                             alt="author" class="author-img">
+                        <small>William Wong</small>
+                    </div>
+                    <small class="card-text text-end">9/25/2015</small>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fbf10de82ee_photo-1433155327100-12aac6a14ff1.jpg"
+                         class="card-height-2" alt="">
+                    <div class="card-img-overlay">
+                        <small class="card-text rounded text-uppercase custombtn p-2 color-relaxation text-white">Relaxation</small>
+                    </div>
+                </div>
+                <div class="card-body border border-top-0">
+                    <h5 class="card-title ">From Top Down</h5>
+                    <small class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</small>
+                </div>
+                <div class="card-footer d-flex justify-content-between flex-row border border-top-0">
+                    <div class="d-inline-flex  flex-row">
+                        <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                             alt="author" class="author-img">
+                        <small>William Wong</small>
+                    </div>
+                    <small class="card-text text-end">9/25/2015</small>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f5042de82d3_photo-1441906363162-903afd0d3d52.jpg"
+                         class="card-height-2" alt="">
+                    <div class="card-img-overlay">
+                        <small class="card-text rounded text-uppercase custombtn p-2 color-vacation text-white">Vacation</small>
+                    </div>
+                </div>
+                <div class="card-body border border-top-0">
+                    <h5 class="card-title ">From Top Down</h5>
+                    <small class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</small>
+                </div>
+                <div class="card-footer d-flex justify-content-between flex-row border border-top-0">
+                    <div class="d-inline-flex  flex-row">
+                        <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                             alt="author" class="author-img">
+                        <small>William Wong</small>
+                    </div>
+                    <small class="card-text text-end">9/25/2015</small>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fa485de82cc_photo-1442347504183-965bd14449ac.jpg"
+                         class="card-height-2" alt="">
+                    <div class="card-img-overlay">
+                        <small class="card-text rounded text-uppercase custombtn p-2 color-vacation text-white">Vacation</small>
+                    </div>
+                </div>
+                <div class="card-body border border-top-0">
+                    <h5 class="card-title ">From Top Down</h5>
+                    <small class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</small>
+                </div>
+                <div class="card-footer d-flex justify-content-between flex-row border border-top-0">
+                    <div class="d-inline-flex  flex-row">
+                        <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                             alt="author" class="author-img">
+                        <small>William Wong</small>
+                    </div>
+                    <small class="card-text text-end">9/25/2015</small>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded">
+                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f39abde82eb_photo-1433878455169-4698e60005b1.jpg"
+                         class="card-height-2" alt="">
+                    <div class="card-img-overlay">
+                        <small class="card-text rounded text-uppercase custombtn p-2 color-travel text-white">Travel</small>
+                    </div>
+                    <div class="card-body border border-top-0">
+                        <h5 class="card-title ">From Top Down</h5>
+                        <small class="card-text text-dark-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit.</small>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between flex-row border border-top-0">
+                        <div class="d-inline-flex  flex-row">
+                            <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                                 alt="author" class="author-img">
+                            <small>William Wong</small>
+                        </div>
+                        <small class="card-text text-end">9/25/2015</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script src="index.js"></script>
 </body>
 </html>

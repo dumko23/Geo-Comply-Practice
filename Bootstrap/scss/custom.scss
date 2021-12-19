@@ -28,7 +28,11 @@
   transition: 0.3s;
 }
 
-.nav-item.py-1.px-3.mx-1.rounded:hover {
+.nav-item.py-1.mx-1.rounded {
+  width: 110px;
+}
+
+.nav-item.py-1.mx-1.rounded:hover {
   background-color: rgb(240, 240, 240);
 }
 
@@ -49,11 +53,39 @@
 }
 
 .card-flex {
-  height: 240px;
+  height: 14rem;
 }
 
 .author-img {
   height: 26px;
   width: 26px;
   border-radius: 13px;
+}
+
+.card-height {
+  height: 280px;
+}
+
+.card-height-2 {
+  height: 150px;
+}
+
+.footer-bg {
+  background-color: rgb(252, 252, 252);;
+}
+
+.color-photography {
+  background-color: #a370f7
+}
+
+.color-vacation {
+  background-color: rgb(210, 95, 124);
+}
+
+.color-travel {
+  background-color: rgb(73, 174, 92);
+}
+
+.color-relaxation {
+  background-color: rgb(74, 174, 194);
 }
