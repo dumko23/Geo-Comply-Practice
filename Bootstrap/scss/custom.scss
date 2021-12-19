@@ -8,6 +8,7 @@
 .custombg {
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fd4d0de82b2_photo-1439189741837-58720e8d82d5.jpg");
   background-size: cover;
+  background-position-y: center;
   height: 50vh;
 }
 
@@ -21,9 +22,38 @@
   border-color: #dd783f;
 }
 
-.nav-link:hover {
+.nav-link.text-uppercase:hover {
   color: white !important;
   padding-top: 0.35rem;
   transition: 0.3s;
 }
 
+.nav-item.py-1.px-3.mx-1.rounded:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.custom-line {
+  height: 1px;
+  width: 20%;
+  margin: 16px auto;
+  background-color: rgb(222, 222, 222);
+}
+
+.custombg-2 {
+  background-color: rgb(247, 247, 247);
+}
+
+.custom-margin {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.card-flex {
+  height: 240px;
+}
+
+.author-img {
+  height: 26px;
+  width: 26px;
+  border-radius: 13px;
+}
