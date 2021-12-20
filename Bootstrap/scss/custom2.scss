@@ -1,0 +1,100 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.custombg {
+  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fc806de82b4_bridges.jpg");
+  background-size: cover;
+  background-position-y: center;
+  height: 50vh;
+}
+
+.custombtn {
+  background-color: #dd783f;
+  border-color: #dd783f;
+}
+.col-sm {
+  max-width: 480px;
+}
+
+.link-img {
+  height: 15px;
+  width: 15px;
+}
+
+.list-group-item-span {
+  text-decoration: none;
+  color: black;
+}
+
+.fluid-bg {
+  background-color: rgb(247, 247, 247);
+}
+
+.nav-link.text-uppercase:hover {
+  color: white !important;
+  padding-top: 0.35rem;
+  transition: 0.3s;
+}
+
+.nav-item.py-1.mx-1.rounded {
+  width: 110px;
+}
+
+.nav-item.py-1.mx-1.rounded:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.custom-line {
+  height: 1px;
+  width: 20%;
+  margin: 16px auto;
+  background-color: rgb(222, 222, 222);
+}
+
+.custombg-2 {
+  background-color: rgb(247, 247, 247);
+}
+
+.custom-margin {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.footer-bg {
+  background-image: linear-gradient(rgba(35, 47, 56, 0.47), rgba(35, 47, 56, 0.31) 99%), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f0ae6de82d7_footer-bg.jpg");
+  background-position: 0 0, 50% 0;
+  background-size: auto, cover;
+}
+
+.form-control.py-3 {
+  width:375px;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.btn.py-3.mt-4.px-5 {
+  border-radius: 0 0.25rem 0.25rem 0 !important;
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-bg-2 {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(35, 47, 56, 0.6);
+}
+
+.font-1 {
+  font-family: 'Lora', serif;
+}
+
+.font-2 {
+  font-family: 'Oxygen', sans-serif;
+}
+
+@media (max-width: 320px) {
+
+  .nav-footer {
+    justify-content: center !important;
+  }
+}
