@@ -1,4 +1,3 @@
-
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 .navbar-collapse {
@@ -6,7 +5,7 @@
 }
 
 .custombg {
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fd4d0de82b2_photo-1439189741837-58720e8d82d5.jpg");
+  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fd4d0de82b2_photo-1439189741837-58720e8d82d5.jpg");
   background-size: cover;
   background-position-y: center;
   height: 50vh;
@@ -62,10 +61,63 @@
   border-radius: 13px;
 }
 
+.feature-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.6) 76%, rgba(0, 0, 0, 0.76)), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fe3eede82c6_photo-1443926818681-717d074a57af.jpg") 50% 50%;
+  background-size: 100% 100%;
+  transition: background-size 0.5s ease;
+}
+
+.feature-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.6) 76%, rgba(0, 0, 0, 0.76)), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fb609de82c9_photo-1443304895043-ef30921332c5.jpg") 50% 50%;
+  background-size: 100% 100%;
+  transition: background-size 0.5s ease;
+}
+
+.recent-1 {
+  background: url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f7cadde82d1_photo-1433854304641-67729357fe18.jpg ") 50% 50%;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.recent-2 {
+  background: url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fa235de82c7_photo-1431329842981-433c8635c2b9.jpg") 50% 50%;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.recent-3 {
+  background: url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fbf10de82ee_photo-1433155327100-12aac6a14ff1.jpg") 50% 50%;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.recent-4 {
+  background: url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f5042de82d3_photo-1441906363162-903afd0d3d52.jpg") 50% 50%;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.recent-5 {
+  background: url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fa485de82cc_photo-1442347504183-965bd14449ac.jpg") 50% 50%;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.recent-6 {
+  background: url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f39abde82eb_photo-1433878455169-4698e60005b1.jpg") 50% 50%;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
 .card-height {
   height: 280px;
   object-fit: cover;
 }
+
+.col-sm {
+  height: 285px;
+}
+
 
 .card-height-2 {
   height: 150px;
@@ -91,8 +143,20 @@
   background-color: rgb(74, 174, 194);
 }
 
-.gradient {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.6) 46%, rgba(0, 0, 0, 0.76));
+.transform-img:hover {
+  background-size: 115% 115%;
+}
+
+.transform-img-2:hover {
+  background-size: 115%;
+}
+
+.move-hover {
+  transition: 0.25s;
+}
+
+.move-hover:hover {
+  transform: translateY(-5px);
 }
 
 @media (max-width: 320px) {

@@ -79,15 +79,14 @@
         <p class="fs-4 mt-5 px-3 text-center">Featured posts</p>
         <div class="custom-line"></div>
         <div class="row g-4 justify-content-center">
-            <div class="col-sm">
-                <div class="card bg-dark text-white border-0 ">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fe3eede82c6_photo-1443926818681-717d074a57af.jpg"
-                         class="card-img card-height" alt="...">
-                    <div class="card-img-overlay gradient">
-                        <small class="card-text rounded text-uppercase p-2" style="background-color: #a370f7">Photography</small>
+            <div class="col-sm move-hover">
+                <div class="card bg-dark text-white border-0">
+                    <div class="card-body gradient transform-img feature-1 rounded">
+                        <small class="card-text rounded text-uppercase p-2 color-photography">Photography</small>
                         <div class="d-inline-flex justify-content-end flex-column card-flex">
                             <h4 class="card-title">The Road Ahead</h4>
-                            <p class="card-text invis-text text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p class="card-text invis-text text-white-50">Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.</p>
                             <div class="d-inline-flex justify-content-between flex-row">
                                 <div class="d-inline-flex  flex-row">
                                     <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7f7389de832c_128-34.jpg"
@@ -100,11 +99,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm move-hover">
                 <div class="card bg-dark text-white border-0">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fb609de82c9_photo-1443304895043-ef30921332c5.jpg"
-                         class="card-img card-height" alt="...">
-                    <div class="card-img-overlay gradient">
+                    <div class="card-body gradient transform-img feature-2 rounded">
                         <small class="card-text rounded text-uppercase custombtn p-2">Adventure</small>
                         <div class="d-inline-flex justify-content-end flex-column card-flex">
                             <h4 class="card-title ">From Top Down</h4>
@@ -126,34 +123,34 @@
         <p class="fs-4 mt-5 px-3 text-center">Most Recent</p>
         <div class="custom-line"></div>
         <div class="row g-4 justify-content-center">
-            <div class="col-sm-4">
-                <div class="card rounded">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f7cadde82d1_photo-1433854304641-67729357fe18.jpg"
-                         class="card-height-2" alt="">
-                    <div class="card-img-overlay">
-                        <small class="card-text rounded text-uppercase custombtn p-2 bg-warning text-white">Nature</small>
+            <div class="col-sm-4 move-hover">
+                <div class="rounded">
+                    <div class="card-header recent-1 card-height-2 transform-img-2">
+                        <div class="mt-2">
+                            <small class="card-text rounded text-uppercase p-2 mt-5 bg-warning text-white">Nature</small>
+                        </div>
                     </div>
-                </div>
-                <div class="card-body bg-white border border-top-0">
-                    <h5 class="card-title ">From Top Down</h5>
-                    <small class="card-text text-black-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit.</small>
-                </div>
-                <div class="card-footer d-flex justify-content-between flex-row footer-bg border border-top-0">
-                    <div class="d-inline-flex  flex-row">
-                        <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
-                             alt="author" class="author-img">
-                        <small class="text-black-50 ms-2">William Wong</small>
+                    <div class="card-body bg-white border border-top-0 ">
+                        <h5 class="card-title ">From Top Down</h5>
+                        <small class="card-text text-black-50 align-bottom">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit.</small>
                     </div>
-                    <small class="card-text text-end text-black-50 ms-2">9/25/2015</small>
+                    <div class="card-footer d-flex justify-content-between flex-row footer-bg border border-top-0">
+                        <div class="d-inline-flex  flex-row">
+                            <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f96f6de825d/5e4b1929fccc7ff9f8de8335_128-14.jpg"
+                                 alt="author" class="author-img">
+                            <small class="text-black-50 ms-2">William Wong</small>
+                        </div>
+                        <small class="card-text text-end text-black-50 ms-2">9/25/2015</small>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 move-hover">
                 <div class="card rounded">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fa235de82c7_photo-1431329842981-433c8635c2b9.jpg"
-                         class="card-height-2" alt="">
-                    <div class="card-img-overlay">
-                        <small class="card-text rounded text-uppercase p-2 text-white color-photography">Photography</small>
+                    <div class="card-header recent-2 card-height-2 transform-img-2">
+                        <div class="mt-2">
+                            <small class="card-text rounded text-uppercase p-2 text-white color-photography">Photography</small>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body border border-top-0">
@@ -170,12 +167,12 @@
                     <small class="card-text text-end text-black-50 ms-2">9/25/2015</small>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 move-hover">
                 <div class="card rounded">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fbf10de82ee_photo-1433155327100-12aac6a14ff1.jpg"
-                         class="card-height-2" alt="">
-                    <div class="card-img-overlay">
-                        <small class="card-text rounded text-uppercase custombtn p-2 color-relaxation text-white">Relaxation</small>
+                    <div class="card-header recent-3 card-height-2 transform-img-2">
+                        <div class="mt-2">
+                            <small class="card-text rounded text-uppercase custombtn p-2 color-relaxation text-white">Relaxation</small>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body border border-top-0">
@@ -192,12 +189,12 @@
                     <small class="card-text text-end text-black-50 ms-2">9/25/2015</small>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 move-hover">
                 <div class="card rounded">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f5042de82d3_photo-1441906363162-903afd0d3d52.jpg"
-                         class="card-height-2" alt="">
-                    <div class="card-img-overlay">
-                        <small class="card-text rounded text-uppercase custombtn p-2 color-vacation text-white">Vacation</small>
+                    <div class="card-header recent-4 card-height-2 transform-img-2">
+                        <div class="mt-2">
+                            <small class="card-text rounded text-uppercase custombtn p-2 color-vacation text-white">Vacation</small>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body border border-top-0">
@@ -214,12 +211,12 @@
                     <small class="card-text text-end text-black-50 ms-2">9/25/2015</small>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 move-hover">
                 <div class="card rounded">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7fa485de82cc_photo-1442347504183-965bd14449ac.jpg"
-                         class="card-height-2" alt="">
-                    <div class="card-img-overlay">
-                        <small class="card-text rounded text-uppercase custombtn p-2 color-vacation text-white">Vacation</small>
+                    <div class="card-header recent-5 card-height-2 transform-img-2">
+                        <div class="mt-2">
+                            <small class="card-text rounded text-uppercase custombtn p-2 color-vacation text-white">Vacation</small>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body border border-top-0">
@@ -236,12 +233,12 @@
                     <small class="card-text text-end text-black-50 ms-2">9/25/2015</small>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 move-hover">
                 <div class="card rounded">
-                    <img src="https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f39abde82eb_photo-1433878455169-4698e60005b1.jpg"
-                         class="card-height-2" alt="">
-                    <div class="card-img-overlay">
-                        <small class="card-text rounded text-uppercase custombtn p-2 color-travel text-white">Travel</small>
+                    <div class="card-header recent-6 card-height-2 transform-img-2">
+                        <div class="mt-2">
+                            <small class="card-text rounded text-uppercase custombtn p-2 color-travel text-white">Travel</small>
+                        </div>
                     </div>
                     <div class="card-body border border-top-0">
                         <h5 class="card-title ">From Top Down</h5>
