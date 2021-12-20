@@ -159,6 +159,12 @@
   transform: translateY(-5px);
 }
 
+.footer-bg {
+  background-image: linear-gradient(rgba(35, 47, 56, 0.47), rgba(35, 47, 56, 0.31) 99%), url("https://uploads-ssl.webflow.com/5e4b192…/5e4b192…_footer-bg.jpg");
+  background-position: 0 0, 50% 0;
+  background-size: auto, cover;
+}
+
 @media (max-width: 320px) {
   .invis-text {
     display: none;
