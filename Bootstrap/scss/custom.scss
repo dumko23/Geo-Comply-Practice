@@ -160,13 +160,50 @@
 }
 
 .footer-bg {
-  background-image: linear-gradient(rgba(35, 47, 56, 0.47), rgba(35, 47, 56, 0.31) 99%), url("https://uploads-ssl.webflow.com/5e4b192…/5e4b192…_footer-bg.jpg");
+  background-image: linear-gradient(rgba(35, 47, 56, 0.47), rgba(35, 47, 56, 0.31) 99%), url("https://uploads-ssl.webflow.com/5e4b1929fccc7f2575de825e/5e4b1929fccc7f0ae6de82d7_footer-bg.jpg");
   background-position: 0 0, 50% 0;
   background-size: auto, cover;
+}
+
+.form-control.py-3 {
+  width:375px;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.btn.py-3.mt-4.px-5 {
+  border-radius: 0 0.25rem 0.25rem 0 !important;
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-bg-2 {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(35, 47, 56, 0.6);
+}
+
+.font-1 {
+  font-family: 'Lora', serif;
+}
+
+.font-2 {
+  font-family: 'Oxygen', sans-serif;
 }
 
 @media (max-width: 320px) {
   .invis-text {
     display: none;
+  }
+
+  .form-control.py-3 {
+    border-radius: 0.25rem !important;
+    width: 100%;
+  }
+
+  .btn.py-3.mt-4.px-5 {
+    width: 100%;
+    border-radius: 0.25rem !important;
+  }
+
+  .nav-footer {
+    justify-content: center !important;
   }
 }
