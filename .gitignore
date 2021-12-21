@@ -4,6 +4,8 @@ dist/
 
 .idea
 
+.cache
+
 *.json
 
 
