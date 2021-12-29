@@ -24,8 +24,4 @@ COPY /script/script.sh /var/www
 
 WORKDIR /var/www
 
-EXPOSE 9000
-
-ENTRYPOINT ["/bin/bash", "./script.sh"]
-
-CMD ["php"]
+CMD ["php-fpm"]
