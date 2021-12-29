@@ -15,16 +15,5 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - appdata:/var/www
-    depends_on:
-      - mysql
-  mysql:
-    image: mysql:latest
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: sait
-    volumes:
-      - ./mysql:/var/lib/mysql
 volumes:
   appdata:
