@@ -15,5 +15,6 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - appdata:/var/www
+      - ./local.ini:/usr/local/etc/php/conf.d/local.ini
 volumes:
   appdata:
