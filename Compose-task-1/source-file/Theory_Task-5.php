@@ -4,8 +4,7 @@ const FIRST_CONST = 41;
 const SECOND_CONST = 33;
 
 $sum = FIRST_CONST + SECOND_CONST;
-echo $sum;
-echo '</br>';
+echo $sum . '</br>';
 
 #const FIRST_CONST = 53;
 
