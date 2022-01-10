@@ -27,7 +27,7 @@ for ($i = 1; $i ** 2 < $n; $i++) {
 
 #Task 3
 
-$btnArray = ['brt 10', 'brt 9', 'brt 8', 'brt 7', 'brt 6', 'brt 5', 'brt 4', 'brt 3', 'brt 2', 'brt 1',];
+$btnArray = ['btn 10', 'btn 9', 'btn 8', 'btn 7', 'btn 6', 'btn 5', 'btn 4', 'btn 3', 'btn 2', 'btn 1',];
 
 natsort($btnArray);
 echo '<pre>';
