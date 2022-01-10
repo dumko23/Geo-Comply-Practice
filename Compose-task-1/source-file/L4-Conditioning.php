@@ -4,23 +4,6 @@
 const MIN = 10;
 const MAX = 50;
 
-# 1. Function version.
-function rangeCheck($x): string
-{
-    if ($x > MIN && $x < MAX) {
-        return '+';
-    } elseif ($x === MIN || $x === MAX) {
-        return '+-';
-    } else {
-        return '-';
-    }
-}
-
-echo rangeCheck(10);
-echo '</br>';
-
-# 2. Simple conditioning
-
 $y = 11;
 
 if ($y > MIN && $y < MAX) {
@@ -58,10 +41,10 @@ echo '</br>';
 
 $first = 1;
 $second = 2;
-$third = 2;
+$third = 0;
 
 # Сначала сделал этот вариант, так как создание таких условий первым пришло в голову (люблю себе усложнять жизнь)
-# Да, он очень сложный и громоздкий, но так уже вышло
+# Да, он очень сложный и громоздкий, но так уж вышло
 if (($first - $second) < 0 && ($first - $third) > 0) {
     if (($first - $second) > ($first - $third)) {
         echo 'Middle = ' . $third;
