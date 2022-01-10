@@ -28,8 +28,8 @@ echo '</br>';
 $studentsVisited = 5;
 $studentsTotal = 10;
 
-echo "{$studentsVisited} of {$studentsTotal} students has visited the lecture." . '</br>';
-echo $studentsVisited . ' of ' . $studentsTotal . ' students has visited the lecture.' . '</br>';
+echo "{$studentsVisited} out of {$studentsTotal} students  attended the lecture." . '</br>';
+echo $studentsVisited . ' out of ' . $studentsTotal . ' students attended the lecture.' . '</br>';
 
 #Task 3
 
