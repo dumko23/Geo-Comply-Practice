@@ -22,3 +22,17 @@ function total(array $array): array
 echo '<pre>';
 print_r(total($products));
 echo '</pre>';
+
+
+# With the array method
+function total2(array $array): array
+{
+    return [
+        'totalPrice' => array_reduce($array, fn($sum, $item) => $sum + $item['price'], 0),
+        'totalQuantity' => array_reduce($array, fn($sum, $item) => $sum + $item['quantity'], 0),
+    ];
+}
+echo '<br>';
+echo '<pre>';
+print_r(total2($products));
+echo '</pre>';

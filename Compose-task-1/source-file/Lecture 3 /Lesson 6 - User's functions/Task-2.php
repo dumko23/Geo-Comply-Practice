@@ -16,4 +16,4 @@ function sqrExpress($a, $b, $c): string
     }
 }
 
-echo sqrExpress(5, 12, 7);
+echo sqrExpress(a: 5, b: 12, c: 7);
