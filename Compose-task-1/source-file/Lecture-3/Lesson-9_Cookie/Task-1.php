@@ -4,7 +4,7 @@ date_default_timezone_set('Europe/Kiev');
 if (!isset($_COOKIE['user']) && !isset($_COOKIE['count'])) {
     setcookie(
         'user',
-        date('d/m/Y H:i:s ', ),
+        date('d/m/Y H:i:s '),
         time() + 10 * 60 * 60
     );
     setcookie(
@@ -12,7 +12,7 @@ if (!isset($_COOKIE['user']) && !isset($_COOKIE['count'])) {
         $count = 1,
         time() + 10 * 60 * 60
     );
-    echo "Hello, newbie!";
+    echo "Hello there, newbie!";
 } else {
 
     $lastVisited = $_COOKIE['user'];
@@ -20,7 +20,7 @@ if (!isset($_COOKIE['user']) && !isset($_COOKIE['count'])) {
 
     setcookie(
         'user',
-        date('d/m/Y H:i:s', ),
+        date('d/m/Y H:i:s'),
         time() + 10 * 60 * 60
     );
     setcookie(
@@ -28,7 +28,7 @@ if (!isset($_COOKIE['user']) && !isset($_COOKIE['count'])) {
         $count = $_COOKIE['count'] + 1,
         time() + 10 * 60 * 60
     );
-    echo "Welcome back, master!" . '<br>';
+    echo 'Welcome back, master!' . '<br>';
     echo 'Last visit: ' . $lastVisited . '<br>';
     echo 'Times visited before: ' . $count;
 }
