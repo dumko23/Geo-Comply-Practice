@@ -1,7 +1,9 @@
 <?php
-echo "<footer>
-    Copyright &copy; {$GLOBALS['companyName']}
-</footer>";
+if (isset($companyName)) {
+    echo "<footer>
+        Copyright &copy;  {$companyName}
+    </footer>";
+}
 
 /*  Если выводить переменную не используя глобал - выдаёт ошибку, которая будет отображаться,
     если запускать футер как отдельный файл.
