@@ -2,7 +2,9 @@
 if (isset($companyName)) {
     echo "<footer>
         Copyright &copy;  {$companyName}
-    </footer>";
+            </footer>
+    </body>
+</html>";
 }
 
 /*  Если выводить переменную не используя глобал - выдаёт ошибку, которая будет отображаться,
