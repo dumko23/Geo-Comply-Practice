@@ -11,12 +11,12 @@ class Square extends Figure
         $this->a = $a;
     }
 
-    public function getArea(): float
+    public function getArea(): string
     {
-        return $this->square = $this->a * $this->a;
+        return 'Area: ' . $this->square = $this->a * $this->a;
     }
 
-    public function infoAbout(): string
+    public final function infoAbout(): string
     {
         return 'This is a ' . self::class . ' class. It have ' . self::SIDES_COUNT . ' sides';
     }

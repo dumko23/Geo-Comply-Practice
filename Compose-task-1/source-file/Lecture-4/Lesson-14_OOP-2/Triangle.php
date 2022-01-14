@@ -21,7 +21,7 @@ class Triangle extends Figure
         return 'Area: ' . $this->square = sqrt($p*($p - $this->a) * ($p - $this->b)*($p -$this->c));
     }
 
-    public function infoAbout(): string
+    public final function infoAbout(): string
     {
         return 'This is a ' . self::class . ' class. It have ' . self::SIDES_COUNT . ' sides';
     }

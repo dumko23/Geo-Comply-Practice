@@ -18,7 +18,7 @@ class Rectangle extends Figure
         return 'Area: ' . $this->square = $this->a * $this->b;
     }
 
-    public function infoAbout(): string
+    public final function infoAbout(): string
     {
         return 'This is a ' . self::class . ' class. It have ' . self::SIDES_COUNT . ' sides';
     }
