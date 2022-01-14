@@ -19,4 +19,4 @@ echo 'Fuel consumption: ' . $fourthCar->fuelConsumption(34) . '<br>';
 echo 'First const:' . $firstCar::ONE . '<br>';
 echo 'Second const:' . $firstCar::TWO . '<br>';
 echo 'Third const:' . $firstCar::THREE . '<br>';
-echo 'Max-value const: ' . $firstCar->getMaxConstant();
+echo 'Max-value const: ' . $firstCar::getMaxConstant();
