@@ -9,9 +9,9 @@ class Square extends Figure
     {
     }
 
-    public function getArea(): string
+    public function getArea(): float
     {
-        return 'Area: ' . $this->square = $this->a * $this->a;
+        return $this->square = $this->a * $this->a;
     }
 
     public final function infoAbout(): string

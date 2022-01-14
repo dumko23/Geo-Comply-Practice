@@ -9,10 +9,10 @@ class Triangle extends Figure
     {
     }
 
-    public function getArea(): string
+    public function getArea(): float
     {
         $p = ($this->a + $this->b + $this->c) / 2;
-        return 'Area: ' . $this->square = sqrt($p * ($p - $this->a) * ($p - $this->b) * ($p - $this->c));
+        return $this->square = sqrt($p * ($p - $this->a) * ($p - $this->b) * ($p - $this->c));
     }
 
     public final function infoAbout(): string

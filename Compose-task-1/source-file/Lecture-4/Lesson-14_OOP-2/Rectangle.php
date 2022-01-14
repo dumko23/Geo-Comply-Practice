@@ -9,9 +9,9 @@ class Rectangle extends Figure
     {
     }
 
-    public function getArea(): string
+    public function getArea(): float
     {
-        return 'Area: ' . $this->square = $this->a * $this->b;
+        return $this->square = $this->a * $this->b;
     }
 
     public final function infoAbout(): string
