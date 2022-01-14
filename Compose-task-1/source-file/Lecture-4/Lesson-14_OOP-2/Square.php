@@ -4,11 +4,9 @@ class Square extends Figure
 {
     public const SIDES_COUNT = 4;
 
-    private float $a;
 
-    public function __construct(float $a)
+    public function __construct(private float $a)
     {
-        $this->a = $a;
     }
 
     public function getArea(): string

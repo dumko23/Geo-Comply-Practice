@@ -4,13 +4,9 @@ class Rectangle extends Figure
 {
     public const SIDES_COUNT = 4;
 
-    private float $a;
-    private float $b;
 
-    public function __construct(float $a, float $b)
+    public function __construct(private float $a, private float $b)
     {
-        $this->a = $a;
-        $this->b = $b;
     }
 
     public function getArea(): string
