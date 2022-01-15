@@ -97,7 +97,7 @@ class CacheItemPoolCookies implements CacheItemPoolInterfaceCookies
     {
         $array = [];
         foreach ($_COOKIE as $key => $value) {
-            if (preg_match("/^deffer-[a-zA-Z]+/", $key)) {
+            if (preg_match("/^deffer-[_+[a-zA-Z]+|[a-zA-Z]+]/", $key)) {
                 $array[$key] = $value;
             }
         }

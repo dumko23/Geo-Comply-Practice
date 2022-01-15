@@ -95,7 +95,7 @@ class CacheItemPoolSession implements CacheItemPoolInterfaceSession
     {
         $array = [];
         foreach ($_SESSION as $key => $value) {
-            if (preg_match("/^deffer-[a-zA-Z]+/", $key)) {
+            if (preg_match("/^deffer-[_+[a-zA-Z]+|[a-zA-Z]+]/", $key)) {
                 $array[$key] = $value;
             }
         }
