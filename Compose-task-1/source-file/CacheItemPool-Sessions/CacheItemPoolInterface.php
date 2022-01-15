@@ -2,7 +2,7 @@
 
 interface CacheItemPoolInterface
 {
-    public function getItem($key): string;
+    public function getItem($key): array|string;
 
     /**
      * Returns a traversable set of cache items.

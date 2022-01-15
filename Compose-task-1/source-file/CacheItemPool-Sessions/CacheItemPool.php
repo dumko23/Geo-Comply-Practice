@@ -5,10 +5,10 @@ require_once 'CacheItemPoolInterface.php';
 class CacheItemPool implements CacheItemPoolInterface
 {
 
-    public function getItem($key): string
+    public function getItem($key): array|string
     {
         if (array_key_exists($key, $_SESSION)) {
-            return $_SESSION[$key];
+            return array_fill_keys([$key], $_SESSION[$key]);
         } else {
             return "There's no such key..";
         }
@@ -24,7 +24,7 @@ class CacheItemPool implements CacheItemPoolInterface
         }
         $array = [];
         foreach ($keys as $key) {
-            $array += array_fill_keys([$key],$_SESSION["$key"]);
+            $array += array_fill_keys([$key], $_SESSION[$key]);
         }
         return $array;
     }
@@ -86,7 +86,7 @@ class CacheItemPool implements CacheItemPoolInterface
         if (array_key_exists('deffer-' . $key, $_SESSION)) {
             return false;
         } else {
-            $_SESSION['deffer-'.$key] = $value;
+            $_SESSION['deffer-' . $key] = $value;
             return true;
         }
     }
@@ -94,8 +94,8 @@ class CacheItemPool implements CacheItemPoolInterface
     public function commit(): bool
     {
         $array = [];
-        foreach($_SESSION as $key => $value) {
-            if (preg_match("/^deffer-[a-zA-Z]+/",$key)){
+        foreach ($_SESSION as $key => $value) {
+            if (preg_match("/^deffer-[a-zA-Z]+/", $key)) {
                 $array[$key] = $value;
             }
         }
