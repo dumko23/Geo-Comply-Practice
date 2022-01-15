@@ -1,6 +1,6 @@
 <?php
 
-interface CacheItemPoolInterface
+interface CacheItemPoolInterfaceSession
 {
     public function getItem($key): array|string;
 

@@ -8,9 +8,9 @@ function prettyPrint($array)
     echo '</pre>';
 }
 
-require_once 'CacheItemPool.php';
+require_once 'CacheItemPoolSession.php';
 
-$obj = new CacheItemPool();
+$obj = new CacheItemPoolSession();
 
 # Clear: Проверяем работу и по необходимости очищаем сессию/пул от значений
 var_dump($obj->clear());

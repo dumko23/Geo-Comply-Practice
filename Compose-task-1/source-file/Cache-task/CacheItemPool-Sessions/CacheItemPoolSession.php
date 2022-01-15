@@ -1,8 +1,8 @@
 <?php
 
-require_once 'CacheItemPoolInterface.php';
+require_once 'CacheItemPoolInterfaceSession.php';
 
-class CacheItemPool implements CacheItemPoolInterface
+class CacheItemPoolSession implements CacheItemPoolInterfaceSession
 {
 
     public function getItem($key): array|string
