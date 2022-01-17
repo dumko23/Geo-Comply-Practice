@@ -4,11 +4,12 @@ require_once 'CacheItemInterface.php';
 class CacheItem implements CacheItemInterface
 {
     private string $key;
-    private mixed $value = '';
+    private mixed $value;
 
-    public function __construct(string $key)
+    public function __construct(string $key, mixed $value)
     {
         $this->key = $key;
+        $this->value = $value;
     }
 
     public function getKey(): string

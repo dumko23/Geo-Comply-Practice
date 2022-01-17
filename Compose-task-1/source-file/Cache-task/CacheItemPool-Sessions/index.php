@@ -7,6 +7,7 @@ function prettyPrint($array)
     print_r($array);
     echo '</pre>';
 }
+require __DIR__ . './../../../vendor/autoload.php';
 
 require_once 'CacheItemPoolSession.php';
 
