@@ -115,4 +115,12 @@ class CacheItemPoolSession implements CacheItemPoolInterfaceSession
 
         return true;
     }
+
+    public static function info(): array {
+        return $_SESSION;
+    }
+
+    public static function getClassName():string{
+        return self::class;
+    }
 }

@@ -117,4 +117,12 @@ class CacheItemPoolCookies implements CacheItemPoolInterfaceCookies
 
         return true;
     }
+
+    public static function info(): array {
+        return $_COOKIE;
+    }
+
+    public static function getClassName():string{
+        return self::class;
+    }
 }

@@ -87,3 +87,7 @@ if(session_status()===0 || session_status()===1) {
         }
     }
 }
+
+prettyPrint(CacheItemPoolSession::info());
+
+echo CacheItemPoolSession::getClassName();
