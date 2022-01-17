@@ -1,12 +1,11 @@
 <?php
-
 namespace CacheTask;
 
 class TransformToCSV
 {
     public function openCSV($source)
     {
-        return fopen($source, 'r+');
+        return fopen($source, 'a+');
 
     }
 
