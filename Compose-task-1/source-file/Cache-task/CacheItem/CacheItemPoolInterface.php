@@ -1,4 +1,5 @@
 <?php
+namespace CacheTask;
 
 interface CacheItemPoolInterface
 {

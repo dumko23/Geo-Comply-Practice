@@ -1,6 +1,5 @@
 <?php
-require_once 'CacheItemPoolInterface.php';
-require_once 'CacheItem.php';
+namespace CacheTask;
 
 class CacheItemPool implements CacheItemPoolInterface
 {

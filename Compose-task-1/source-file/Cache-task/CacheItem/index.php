@@ -1,7 +1,11 @@
 <?php
 session_start();
-require_once 'CacheItem.php';
-require_once 'CacheItemPool.php';
+
+use CacheTask\CacheItem;
+use CacheTask\CacheItemPool;
+use CacheTask\TransformToCSV;
+
+require __DIR__ . '/../../../vendor/autoload.php';
 
 function prettyPrint($array)
 {
@@ -9,16 +13,19 @@ function prettyPrint($array)
     print_r($array);
     echo '</pre>';
 }
+echo __DIR__;
+$csv = new TransformToCSV();
+$csv->openCSV(__DIR__ . '/Source.csv');
 
 $cache = new CacheItemPool();
-
-
 
 //prettyPrint($cache);
 //
 $cache->save(new CacheItem('key3', 2));
 prettyPrint($_COOKIE);
 $cache->save(new CacheItem('key4', 2));
+
+$csv->put($csv->openCSV(__DIR__ . '/Source.csv'), [($cache->getItem('key')->getKey() . ':' . $cache->getItem('key')->get())]);
 
 prettyPrint($cache->getItem('key'));
 
