@@ -11,6 +11,11 @@ session_start();
 (временные файлы удалялись бы после окончания сессии самостоятельно)
 */
 
+use CacheCookies\CacheItemPoolCookies;
+
+
+require __DIR__ . '/../../../vendor/autoload.php';
+
 function prettyPrint($array)
 {
     echo '<pre>';
@@ -18,7 +23,6 @@ function prettyPrint($array)
     echo '</pre>';
 }
 
-require_once 'CacheItemPoolCookies.php';
 
 $obj1 = new CacheItemPoolCookies();
 

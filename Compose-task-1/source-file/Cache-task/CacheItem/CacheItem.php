@@ -1,7 +1,6 @@
 <?php
 namespace CacheTask;
 
-
 class CacheItem implements CacheItemInterface
 {
     private string $key;

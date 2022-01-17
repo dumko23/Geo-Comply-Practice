@@ -1,4 +1,5 @@
 <?php
+namespace CacheCookies;
 
 require_once 'CacheItemPoolInterfaceCookies.php';
 

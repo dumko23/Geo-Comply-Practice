@@ -1,15 +1,16 @@
 <?php
 session_start();
 
+use CacheSession\CacheItemPoolSession;
+
+require __DIR__ . './../../../vendor/autoload.php';
+
 function prettyPrint($array)
 {
     echo '<pre>';
     print_r($array);
     echo '</pre>';
 }
-require __DIR__ . './../../../vendor/autoload.php';
-
-require_once 'CacheItemPoolSession.php';
 
 $obj = new CacheItemPoolSession();
 

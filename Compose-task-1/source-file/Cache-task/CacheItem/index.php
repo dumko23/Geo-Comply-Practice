@@ -13,7 +13,6 @@ function prettyPrint($array)
     print_r($array);
     echo '</pre>';
 }
-echo __DIR__;
 $csv = new TransformToCSV();
 $csv->openCSV(__DIR__ . '/Source.csv');
 

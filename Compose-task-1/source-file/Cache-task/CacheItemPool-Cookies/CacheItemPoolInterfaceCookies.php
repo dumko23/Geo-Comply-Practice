@@ -1,4 +1,5 @@
 <?php
+namespace CacheCookies;
 
 interface CacheItemPoolInterfaceCookies
 {

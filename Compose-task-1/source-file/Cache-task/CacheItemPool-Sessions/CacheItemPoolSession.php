@@ -1,6 +1,5 @@
 <?php
-
-require_once 'CacheItemPoolInterfaceSession.php';
+namespace CacheSession;
 
 class CacheItemPoolSession implements CacheItemPoolInterfaceSession
 {
