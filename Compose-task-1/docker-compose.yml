@@ -26,7 +26,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: sait
+      MYSQL_DATABASE: cacheDB
     volumes:
       - ./mysql:/var/lib/mysql
 

@@ -53,3 +53,4 @@ $cache->saveDeferred(new CacheItem('k123', 11));
 
 $cache->commit();
 prettyPrint($_COOKIE);
+
