@@ -24,8 +24,8 @@ $cache->save(new CacheItem('key3', 2));
 prettyPrint($_COOKIE);
 $cache->save(new CacheItem('key4', 2));
 
-$csv->put($csv->openCSV(__DIR__ . '/Source.csv'), [($cache->getItem('key')->getKey() . ':' . $cache->getItem('key')->get())]);
-$csv->put($csv->openCSV(__DIR__ . '/Source.csv'), [($cache->getItem('key3')->getKey() . ':' . $cache->getItem('key3')->get())]);
+$csv->put($csv->openCSV(__DIR__ . '/Source.csv'), $cache, 'key');
+$csv->put($csv->openCSV(__DIR__ . '/Source.csv'), $cache, 'key2');
 
 prettyPrint($cache->getItem('key'));
 

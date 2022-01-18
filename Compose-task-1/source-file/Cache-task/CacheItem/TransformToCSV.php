@@ -9,8 +9,8 @@ class TransformToCSV
 
     }
 
-    public function put($source, $field)
+    public function put($source, $pool, $field)
     {
-        return fputcsv($source, $field);
+        return fputcsv($source, [($pool->getItem($field)->getKey() . ':' . $pool->getItem($field)->get())]);
     }
 }

@@ -97,7 +97,7 @@ class CacheItemPool implements CacheItemPoolInterface
 
     public function save(CacheItemInterface $item): bool
     {
-        setcookie($item->getKey(), $item->get());
+        $_COOKIE[$item->getKey()] = $item->get();
         return true;
 
     }
@@ -111,7 +111,7 @@ class CacheItemPool implements CacheItemPoolInterface
     public function commit(): bool
     {
         foreach ($this->deffer as $object){
-            setcookie($object->getKey(), $object->get());
+            $_COOKIE[$object->getKey()] = $object->get();
         }
         return true;
     }
