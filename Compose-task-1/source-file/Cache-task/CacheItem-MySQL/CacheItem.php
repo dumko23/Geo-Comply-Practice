@@ -30,7 +30,7 @@ class CacheItem implements CacheItemInterface
 
     public function get(): mixed
     {
-        if ($this->value) {
+        if ($this->isHit()) {
             return $this->value;
         } else {
             return false;

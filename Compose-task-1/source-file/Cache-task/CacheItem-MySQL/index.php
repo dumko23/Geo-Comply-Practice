@@ -7,42 +7,19 @@ use CacheMYSQL\TransformToCSV;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-function prettyPrint($array)
+function prettyPrint($data)
 {
     echo '<pre>';
-    print_r($array);
+    print_r($data);
     echo '</pre>';
 }
 
-$cache = new CacheItemPool();
-
-//prettyPrint($cache);
-//
+$cache = CacheItemPool::getInstance();
 
 $myDB = $cache->newDB('127.0.0.1', 'cacheDB');
 
-
-//$cache->save(new CacheItem('key5', 2));
-
 $queryGet = 'select cacheKey, cacheValue from cacheDB.items;';
-
-prettyPrint($cache->getItem('key1111')->set('some other value'));
-
-var_dump($cache->deleteItem('key1111'));
 prettyPrint($myDB->query($queryGet)->fetchAll());
-$cache->getItem('key1111')->set('some other value');
-$cache->getItem('key1121')->set('some other value');
-$cache->getItem('key1131')->set('some other value');
-$cache->getItem('key1141')->set('some other value');
-$cache->getItem('key1151')->set('some other value');
+$cache->save(new CacheItem('newKey',1112));
 
-prettyPrint($myDB->query($queryGet)->fetchAll());
-
-var_dump($cache->deleteItems(['key1111', 'key1141']));
-
-prettyPrint($myDB->query($queryGet)->fetchAll());
-
-$cache->saveDeferred(new CacheItem('k123', 11));
-$cache->commit();
-prettyPrint($myDB->query($queryGet)->fetchAll());
-
+prettyPrint($cache->getItem('newKey'));
