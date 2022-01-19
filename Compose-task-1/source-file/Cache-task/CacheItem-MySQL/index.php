@@ -16,10 +16,11 @@ function prettyPrint($data)
 
 $cache = CacheItemPool::getInstance();
 
-$myDB = $cache->newDB('127.0.0.1', 'cacheDB');
+$myDB = $cache->newDB('mysql', 'cacheDB');
 
 $queryGet = 'select cacheKey, cacheValue from cacheDB.items;';
 prettyPrint($myDB->query($queryGet)->fetchAll());
 $cache->save(new CacheItem('newKey',1112));
 
 prettyPrint($cache->getItem('newKey'));
+

@@ -2,7 +2,6 @@
 
 namespace CacheMYSQL;
 
-use Exception;
 use InvalidArgumentException;
 use PDO;
 use Traversable;
