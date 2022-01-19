@@ -7,37 +7,10 @@ use InvalidArgumentException;
 use PDO;
 use Traversable;
 
-class CacheItemPool implements CacheItemPoolInterface
+class CacheItemPool extends Singleton implements CacheItemPoolInterface
 {
-    private static CacheItemPool $instance;
     private PDO $db;
     private array $deffer = [];
-
-    private function __construct()
-    {
-    }
-
-    protected function __clone(): void
-    {
-    }
-
-
-    /**
-     * @throws Exception
-     */
-    public function __wakeup()
-    {
-        throw new Exception("Cannot unserialize a singleton.");
-    }
-
-    public static function getInstance(): CacheItemPool
-    {
-        if (!isset(self::$instance)) {
-            self::$instance = new static();
-        }
-        return self::$instance;
-    }
-
 
     public function newDB(string $host, string $dbName): PDO
     {
