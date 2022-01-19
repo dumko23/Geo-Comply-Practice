@@ -3,7 +3,7 @@ session_start();
 
 use CacheMYSQL\CacheItem;
 use CacheMYSQL\CacheItemPool;
-use CacheMYSQL\TransformToCSV;
+use CacheMYSQL\PDOAdapter;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
@@ -16,11 +16,12 @@ function prettyPrint($data)
 
 $cache = CacheItemPool::getInstance();
 
-$myDB = $cache->newDB('mysql', 'cacheDB');
+$myDB = PDOAdapter::db();
 
 $queryGet = 'select cacheKey, cacheValue from cacheDB.items;';
 prettyPrint($myDB->query($queryGet)->fetchAll());
 $cache->save(new CacheItem('newKey',1112));
 
 prettyPrint($cache->getItem('newKey'));
+
 
