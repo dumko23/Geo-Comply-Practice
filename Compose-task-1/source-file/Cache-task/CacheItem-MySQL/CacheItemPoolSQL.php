@@ -4,8 +4,12 @@ namespace CacheMYSQL;
 
 use InvalidArgumentException;
 use Traversable;
+use WithPattern\CacheItemInterface;
+use WithPattern\CacheItemPoolInterface;
+use WithPattern\PDOAdapter;
+use WithPattern\Singleton;
 
-class CacheItemPool extends Singleton implements CacheItemPoolInterface
+class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
 {
     private array $deffer = [];
 
@@ -35,10 +39,10 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                 "Parameter key should only consist of 'A-Z', 'a-z', '0-9', '_', and '.'. Input was: " . $key);
         }
         if ($isTrue) {
-            return new CacheItem($searchedItem, $searchedItemValue);
+            return new CacheItemSQL($searchedItem, $searchedItemValue);
         } else {
-            $this->save(new CacheItem($key, ''));
-            return new CacheItem($key, '');
+            $this->save(new CacheItemSQL($key, ''));
+            return new CacheItemSQL($key, '');
         }
     }
 
@@ -51,7 +55,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                     if ($arrayValue['cacheKey'] === $key) {
                         $searchedItem = $arrayValue['cacheKey'];
                         $searchedItemValue = $arrayValue['cacheValue'];
-                        $collection[] = new CacheItem($searchedItem, $searchedItemValue);
+                        $collection[] = new CacheItemSQL($searchedItem, $searchedItemValue);
                         unset($key);
                         continue 2;
                     }
@@ -60,7 +64,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                 throw new InvalidArgumentException(
                     "Parameter key should only consist of 'A-Z', 'a-z', '0-9', '_', and '.'. Input was: " . $key);
             }
-            array_push($collection, new CacheItem($key, ''));
+            array_push($collection, new CacheItemSQL($key, ''));
         }
         return $collection;
     }
@@ -127,7 +131,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
         return true;
     }
 
-    public function save(CacheItemInterface $item): bool
+    public function save(\WithPattern\CacheItemInterface $item): bool
     {
         foreach (PDOAdapter::getFromDB() as $arrayValue) {
             if ($arrayValue['cacheKey'] === $item->getKey()) {
@@ -138,9 +142,9 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
         return true;
     }
 
-    public function saveDeferred(CacheItemInterface $item): bool
+    public function saveDeferred(\WithPattern\CacheItemInterface $item): bool
     {
-        $this->deffer[] = new CacheItem($item->getKey(), $item->get());
+        $this->deffer[] = new CacheItemSQL($item->getKey(), $item->get());
         return true;
     }
 

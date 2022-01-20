@@ -1,8 +1,7 @@
 <?php
-namespace CacheMYSQL;
+namespace WithPattern;
 
 use InvalidArgumentException;
-use Traversable;
 
 interface CacheItemPoolInterface
 {
@@ -30,7 +29,7 @@ interface CacheItemPoolInterface
      * @param string[] $keys
      *   An indexed array of keys of items to retrieve.
      *
-     * @return array|Traversable
+     * @return array|\Traversable
      *   A traversable collection of Cache Items keyed by the cache keys of
      *   each item. A Cache item will be returned for each key, even if that
      *   key is not found. However, if no keys are specified then an empty
@@ -40,7 +39,7 @@ interface CacheItemPoolInterface
      *   MUST be thrown.
      *
      */
-    public function getItems(array $keys = array()): array|Traversable;
+    public function getItems(array $keys = array()): array|\Traversable;
 
     /**
      * Confirms if the cache contains specified cache item.

@@ -1,5 +1,5 @@
 <?php
-namespace CacheTask;
+namespace WithPattern;
 
 interface CacheItemInterface
 {

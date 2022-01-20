@@ -1,12 +1,12 @@
 <?php
 
-namespace CacheMYSQL;
+namespace WithPattern;
 
 use Exception;
 
 class Singleton
 {
-    private static $instance;
+    private static array $instances = [];
 
     private function __construct()
     {
@@ -15,7 +15,6 @@ class Singleton
     protected function __clone(): void
     {
     }
-
 
     /**
      * @throws Exception
@@ -27,10 +26,11 @@ class Singleton
 
     public static function getInstance(): static
     {
-        if (!isset(self::$instance)) {
-            self::$instance = new static();
+        $cls = static::class;
+        if (!isset(self::$instances[$cls])) {
+            self::$instances[$cls] = new static();
         }
-        return self::$instance;
-    }
 
+        return self::$instances[$cls];
+    }
 }

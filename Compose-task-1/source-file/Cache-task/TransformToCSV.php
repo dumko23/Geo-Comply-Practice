@@ -1,5 +1,5 @@
 <?php
-namespace CacheMYSQL;
+namespace WithPattern;
 
 class TransformToCSV
 {

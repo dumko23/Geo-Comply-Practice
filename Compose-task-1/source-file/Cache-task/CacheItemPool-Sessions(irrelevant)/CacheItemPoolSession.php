@@ -1,31 +1,59 @@
 <?php
 namespace CacheSession;
 
-class CacheItemPoolSession implements CacheItemPoolInterfaceSession
+use Traversable;
+use WithPattern\CacheItemInterface;
+use WithPattern\CacheItemPoolInterface;
+use WithPattern\Singleton;
+
+class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
 {
 
-    public function getItem($key): array|string
+    /*public function getItem($key): CacheItemInterface
     {
         if (array_key_exists($key, $_SESSION)) {
-            return array_fill_keys([$key], $_SESSION[$key]);
+            return new CacheItemSession($key, $_SESSION[$key]);
         } else {
-            return "There's no such key..";
+            return new CacheItemSession($key, '');
         }
-
-    }
-
-    public function getItems(array $keys = array()): array|string
+    }*/
+    public function getItem(string $key): CacheItemInterface
     {
-        foreach ($keys as $key) {
-            if (!array_key_exists($key, $_SESSION)) {
-                return "The $key is not in pool";
+        $isTrue = false;
+        $searchedItem = null;
+        foreach ($_SESSION as $objectKey => $value) {
+            if ($objectKey === $key) {
+                $isTrue = true;
+                $searchedItem = $objectKey;
+                $searchedItemValue = $value;
+                break;
             }
         }
-        $array = [];
-        foreach ($keys as $key) {
-            $array += array_fill_keys([$key], $_SESSION[$key]);
+        unset($objectKey, $value);
+        if ($isTrue) {
+            return new CacheItemSession($searchedItem, $searchedItemValue);
+        } else {
+            return new CacheItemSession($key, '');
         }
-        return $array;
+    }
+
+    public function getItems(array $keys = array()): array|\Traversable
+    {
+        $collection = [];
+        foreach ($keys as $key) {
+            foreach ($_SESSION as $objectKey => $value) {
+                if ($objectKey === $key) {
+                    $searchedItem = $objectKey;
+                    $searchedItemValue = $value;
+                    array_push($collection, new CacheItemSession($searchedItem, $searchedItemValue));
+                    unset($key);
+                    continue 2;
+                }
+            }
+            array_push($collection, new CacheItemSession($key, ''));
+        }
+        unset($objectKey, $value);
+        return $collection;
     }
 
     public function hasItem(string $key): bool
@@ -70,22 +98,22 @@ class CacheItemPoolSession implements CacheItemPoolInterfaceSession
         return true;
     }
 
-    public function save($key, $value): bool
+    public function save($item): bool
     {
-        if (!array_key_exists($key, $_SESSION)) {
-            $_SESSION[$key] = $value;
+        if (!array_key_exists($item->getKey(), $_SESSION)) {
+            $_SESSION[$item->getKey()] = $item->get();
             return true;
         } else {
             return false;
         }
     }
 
-    public function saveDeferred($key, $value): bool
+    public function saveDeferred($item): bool
     {
-        if (array_key_exists('deffer-' . $key, $_SESSION)) {
+        if (array_key_exists('deffer-' . $item->getKey(), $_SESSION)) {
             return false;
         } else {
-            $_SESSION['deffer-' . $key] = $value;
+            $_SESSION['deffer-' . $item->getKey()] = $item->get();
             return true;
         }
     }

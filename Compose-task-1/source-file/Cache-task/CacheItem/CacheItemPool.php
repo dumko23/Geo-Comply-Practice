@@ -1,7 +1,11 @@
 <?php
 namespace CacheTask;
 
-class CacheItemPool implements CacheItemPoolInterface
+use WithPattern\CacheItemInterface;
+use WithPattern\CacheItemPoolInterface;
+use WithPattern\Singleton;
+
+class CacheItemPool extends Singleton implements CacheItemPoolInterface
 {
     private array $deffer = [];
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace CacheMYSQL;
+namespace WithPattern;
 
 use Exception;
 use PDO;

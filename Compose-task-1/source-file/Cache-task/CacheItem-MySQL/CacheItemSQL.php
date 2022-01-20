@@ -1,17 +1,20 @@
 <?php
-namespace CacheTask;
+
+namespace CacheMYSQL;
 
 use WithPattern\CacheItemInterface;
+use WithPattern\PDOAdapter;
 
-class CacheItem implements CacheItemInterface
+class CacheItemSQL implements CacheItemInterface
 {
     private string $key;
     private mixed $value;
 
+
     public function __construct(string $key, mixed $value)
     {
         $this->key = $key;
-        $this->value = $value;
+        $this->value = serialize($value);
     }
 
     public function getKey(): string
@@ -21,8 +24,8 @@ class CacheItem implements CacheItemInterface
 
     public function get(): mixed
     {
-        if($this->value) {
-            return $this->value;
+        if ($this->isHit()) {
+            return unserialize($this->value);
         } else {
             return false;
         }
@@ -30,17 +33,18 @@ class CacheItem implements CacheItemInterface
 
     public function isHit(): bool
     {
-        if($this->value){
+        if ($this->value) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
     public function set(mixed $value): static
     {
-        $this->value = $value;
-        $_COOKIE[$this->key] = $value;
+        PDOAdapter::db()->prepare("update cacheDB.items set cacheValue = ? where cacheKey = ?")
+            ->execute([serialize($value), $this->key]);
+        $this->value = serialize($value);
         return $this;
     }
 }

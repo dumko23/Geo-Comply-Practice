@@ -1,28 +1,29 @@
 <?php
-namespace CacheCookies;
+namespace WithPattern;
 
-require_once 'CacheItemPoolInterfaceCookies.php';
+use CacheTask\CacheItem;
+use Traversable;
 
-class CacheItemPoolCookies implements CacheItemPoolInterfaceCookies
+class CacheItemPoolCookies extends Singleton implements CacheItemPoolInterface
 {
 
-    public function getItem($key): array|string
+    public function getItem($key): CacheItemInterface
     {
         if (array_key_exists($key, $_COOKIE)) {
-            return array_fill_keys([$key], $_COOKIE[$key]);
+            return new CacheItem($key, $_COOKIE[$key]);#array_fill_keys([$key], $_COOKIE[$key]);
         } else {
-            return "There's no such key..";
+            return  new CacheItem($key, '');#"There's no such key..";
         }
 
     }
 
-    public function getItems(array $keys = array()): array|string
+    public function getItems(array $keys = array()): array|Traversable
     {
-        foreach ($keys as $key) {
+        /*foreach ($keys as $key) {
             if (!array_key_exists($key, $_COOKIE)) {
                 return "The $key is not in pool";
             }
-        }
+        }*/
         $array = [];
         foreach ($keys as $key) {
             $array += array_fill_keys([$key], $_COOKIE[$key]);
@@ -74,22 +75,22 @@ class CacheItemPoolCookies implements CacheItemPoolInterfaceCookies
         return true;
     }
 
-    public function save($key, $value): bool
+    public function save($item): bool
     {
-        if (!array_key_exists($key, $_COOKIE)) {
-            $_COOKIE[$key] = $value;
+        if (!array_key_exists($item->getKey(), $_COOKIE)) {
+            $_COOKIE[$item->getKey()] = $item->get();
             return true;
         } else {
             return false;
         }
     }
 
-    public function saveDeferred($key, $value): bool
+    public function saveDeferred($item): bool
     {
-        if (array_key_exists('deffer-' . $key, $_COOKIE)) {
+        if (array_key_exists('deffer-' . $item->getKey(), $_COOKIE)) {
             return false;
         } else {
-            $_COOKIE['deffer-' . $key] = $value;
+            $_COOKIE['deffer-' . $item->getKey()] = $item->get();
             return true;
         }
     }
