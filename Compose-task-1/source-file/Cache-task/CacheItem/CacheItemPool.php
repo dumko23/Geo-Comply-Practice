@@ -11,6 +11,16 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
 {
     private array $deffer = [];
 
+    public static function info(): array
+    {
+        return $_COOKIE;
+    }
+
+    public static function getClassName(): string
+    {
+        return self::class;
+    }
+
     public function getItem(string $key): CacheItemInterface
     {
         $isTrue = false;
@@ -23,7 +33,6 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                 break;
             }
         }
-        unset($objectKey, $value);
         if ($isTrue) {
             return new CacheItem($searchedItem, $searchedItemValue);
         } else {
@@ -38,15 +47,18 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
             foreach ($_COOKIE as $objectKey => $value) {
                 if ($objectKey === $key) {
                     $searchedItem = $objectKey;
-                    $searchedItemValue = $value;
-                    array_push($collection, new CacheItem($searchedItem, $searchedItemValue));
+                    if ($value !== '') {
+                        $searchedItemValue = serialize($value);
+                    } else {
+                        $searchedItemValue = $value;
+                    }
+                    $collection[] = new CacheItem($searchedItem, $searchedItemValue);
                     unset($key);
                     continue 2;
                 }
             }
             array_push($collection, new CacheItem($key, ''));
         }
-        unset($objectKey, $value);
         return $collection;
     }
 
@@ -74,7 +86,6 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
 
     public function deleteItem(string $key): bool
     {
-        // TODO: If there is no such key.
         foreach ($_COOKIE as $objectKey => $value) {
             if ($objectKey === $key) {
                 unset($_COOKIE[$objectKey]);
@@ -82,7 +93,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                 return true;
             }
         }
-        unset($objectKey, $value);
+        echo 'There is no such key..' . PHP_EOL;
         return false;
     }
 
@@ -96,21 +107,25 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                     break;
                 }
             }
+            echo 'There is no such key..' . PHP_EOL;
         }
-        unset($objectKey, $value);
         return true;
     }
 
     public function save(CacheItemInterface $item): bool
     {
-        $_COOKIE[$item->getKey()] = $item->get();
-        return true;
-
+        if (!array_key_exists($item->getKey(), $_COOKIE)) {
+            $_COOKIE[$item->getKey()] = $item->get();
+            return true;
+        } else {
+            echo 'Item with the key ' . $item->getKey() . ' is already exists.' . PHP_EOL;
+            return false;
+        }
     }
 
     public function saveDeferred(CacheItemInterface $item): bool
     {
-        array_push($this->deffer, new CacheItem($item->getKey(), $item->get()));
+        $this->deffer[] = new CacheItem($item->getKey(), $item->get());
         return true;
     }
 

@@ -2,38 +2,33 @@
 session_start();
 
 use CacheMYSQL\CacheItemSQL;
-use WithPattern\StaticFactory;
+use WithPattern\ChooseStrategy;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-function prettyPrint($data)
-{
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-}
+$myStrategy = new ChooseStrategy('mysql');
 
-$cacheMySQL = StaticFactory::createPool('mysql');
+/*$myStrategy->printGetItem('newKey')
+    ->printHasItem('newKey')
+    ->printGetItems(['key4', 'key3', 'key2'])
+    ->printSave(new CacheItemSQL('AnotherKey', 'value'))
+    ->printDeleteItem('newKey1112323')
+    ->printDeleteItems(['newKey11111', 'newKey']);
 
-prettyPrint($cacheMySQL->getItem('newKey11111'));
+$myStrategy->setStrategy('session')
+    ->printGetItem('newKey')
+    ->printHasItem('newKey')
+    ->printGetItems(['key4', 'key3', 'key2'])
+    ->printSave(new CacheItemSQL('AnotherKey', 'value'))
+    ->printDeleteItem('newKey1112323')
+    ->printDeleteItems(['newKey11111', 'newKey']);*/
 
-prettyPrint($cacheMySQL->getItem('newKey11111')->set([1, 2, 3]));
-prettyPrint($cacheMySQL->save(new CacheItemSQL('newKey1112323', [2,2,2,])));
-prettyPrint($cacheMySQL->getItem('newKey1112323'));
-
-
-
-$cacheItem = StaticFactory::createPool('items');
-
-prettyPrint($cacheItem->getItem('newKey')->set(123));
-
-prettyPrint($cacheItem->getItem('newKey'));
-
-$cacheSession = StaticFactory::createPool('session');
-
-prettyPrint($cacheSession->getItem('newKey')->set(321));
-
-prettyPrint($cacheSession->getItem('newKey'));
-
+$myStrategy->setStrategy('items')
+    ->printGetItem('newKey')
+    ->printHasItem('newKey')
+    ->printGetItems(['key4', 'key3', 'key2'])
+    ->printSave(new CacheItemSQL('AnotherKey', 'value'))
+    ->printDeleteItem('newKey1112323')
+    ->printDeleteItems(['newKey11111', 'newKey']);
 
 

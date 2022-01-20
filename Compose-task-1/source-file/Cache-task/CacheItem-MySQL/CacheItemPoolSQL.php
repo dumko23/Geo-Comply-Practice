@@ -32,8 +32,12 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
                 if ($arrayValue['cacheKey'] === $key) {
                     $isTrue = true;
                     $searchedItem = $arrayValue['cacheKey'];
-                    $searchedItemValue = unserialize($arrayValue['cacheValue']);
-                    break;
+                    if ($arrayValue['cacheValue'] !== '') {
+                        $searchedItemValue = serialize($arrayValue['cacheValue']);
+                        break;
+                    } else {
+                        $searchedItemValue = $arrayValue['cacheValue'];
+                    }
                 }
             }
         } else {
@@ -56,7 +60,12 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
                 foreach (PDOAdapter::getFromDB() as $arrayValue) {
                     if ($arrayValue['cacheKey'] === $key) {
                         $searchedItem = $arrayValue['cacheKey'];
-                        $searchedItemValue = $arrayValue['cacheValue'];
+                        if ($arrayValue['cacheValue'] !== '') {
+                            $searchedItemValue = serialize($arrayValue['cacheValue']);
+                            break;
+                        } else {
+                            $searchedItemValue = $arrayValue['cacheValue'];
+                        }
                         $collection[] = new CacheItemSQL($searchedItem, $searchedItemValue);
                         unset($key);
                         continue 2;
@@ -107,7 +116,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
                     return true;
                 }
             }
-            echo 'There is no such key..';
+            echo 'There is no such key..' . PHP_EOL;
             return false;
         } else {
             throw new InvalidArgumentException(
@@ -125,6 +134,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
                         break;
                     }
                 }
+                echo 'There is no key ' . $key . ' in the pool.' . PHP_EOL;
             } else {
                 throw new InvalidArgumentException(
                     "Parameter key should only consist of 'A-Z', 'a-z', '0-9', '_', and '.'. Input was: " . $key);
@@ -137,6 +147,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
     {
         foreach (PDOAdapter::getFromDB() as $arrayValue) {
             if ($arrayValue['cacheKey'] === $item->getKey()) {
+                echo 'Item with the key ' . $item->getKey() . ' is already exists.' . PHP_EOL;
                 return false;
             }
         }

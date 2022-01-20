@@ -37,13 +37,17 @@ class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
             foreach ($_SESSION as $objectKey => $value) {
                 if ($objectKey === $key) {
                     $searchedItem = $objectKey;
-                    $searchedItemValue = $value;
+                    if ($value !== '') {
+                        $searchedItemValue = serialize($value);
+                    } else {
+                        $searchedItemValue = $value;
+                    }
                     array_push($collection, new CacheItemSession($searchedItem, $searchedItemValue));
                     unset($key);
                     continue 2;
                 }
             }
-            array_push($collection, new CacheItemSession($key, ''));
+            $collection[] = new CacheItemSession($key, '');
         }
         unset($objectKey, $value);
         return $collection;
@@ -74,6 +78,7 @@ class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
             unset($_SESSION[$key]);
             return true;
         } else {
+            echo 'There is no such key..' . PHP_EOL;
             return false;
         }
     }
@@ -82,7 +87,7 @@ class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
     {
         foreach ($keys as $key) {
             if (!array_key_exists($key, $_SESSION)) {
-                return false;
+                echo 'There is no key ' . $key . ' in the pool.' . PHP_EOL;
             }
         }
         foreach ($keys as $key) {
@@ -97,6 +102,7 @@ class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
             $_SESSION[$item->getKey()] = $item->get();
             return true;
         } else {
+            echo 'Item with the key ' . $item->getKey() . ' is already exists.' . PHP_EOL;
             return false;
         }
     }
