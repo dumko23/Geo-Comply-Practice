@@ -13,11 +13,13 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
 {
     private array $deffer = [];
 
-    public static function info(): array {
+    public static function info(): array
+    {
         return PDOAdapter::getFromDB();
     }
 
-    public static function getClassName():string{
+    public static function getClassName(): string
+    {
         return self::class;
     }
 
@@ -30,7 +32,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
                 if ($arrayValue['cacheKey'] === $key) {
                     $isTrue = true;
                     $searchedItem = $arrayValue['cacheKey'];
-                    $searchedItemValue = $arrayValue['cacheValue'];
+                    $searchedItemValue = unserialize($arrayValue['cacheValue']);
                     break;
                 }
             }
@@ -78,7 +80,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
                     return true;
                 } elseif ($arrayValue['cacheKey'] === $key && $arrayValue == false) {
                     unset($arrayValue);
-                    echo "Cache Item with key {$key} exists in pool but have no value..";
+                    echo "Cache Item with key $key exists in pool but have no value..";
                     return true;
                 }
             }
@@ -131,7 +133,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
         return true;
     }
 
-    public function save(\WithPattern\CacheItemInterface $item): bool
+    public function save(CacheItemInterface $item): bool
     {
         foreach (PDOAdapter::getFromDB() as $arrayValue) {
             if ($arrayValue['cacheKey'] === $item->getKey()) {
@@ -142,7 +144,7 @@ class CacheItemPoolSQL extends Singleton implements CacheItemPoolInterface
         return true;
     }
 
-    public function saveDeferred(\WithPattern\CacheItemInterface $item): bool
+    public function saveDeferred(CacheItemInterface $item): bool
     {
         $this->deffer[] = new CacheItemSQL($item->getKey(), $item->get());
         return true;

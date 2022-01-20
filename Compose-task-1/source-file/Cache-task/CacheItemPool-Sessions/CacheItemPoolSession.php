@@ -1,4 +1,5 @@
 <?php
+
 namespace CacheSession;
 
 use Traversable;
@@ -29,7 +30,7 @@ class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
         }
     }
 
-    public function getItems(array $keys = array()): array|\Traversable
+    public function getItems(array $keys = array()): array|Traversable
     {
         $collection = [];
         foreach ($keys as $key) {
@@ -135,11 +136,13 @@ class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
         return true;
     }
 
-    public static function info(): array {
+    public static function info(): array
+    {
         return $_SESSION;
     }
 
-    public static function getClassName():string{
+    public static function getClassName(): string
+    {
         return self::class;
     }
 }

@@ -1,6 +1,8 @@
 <?php
+
 namespace CacheTask;
 
+use Traversable;
 use WithPattern\CacheItemInterface;
 use WithPattern\CacheItemPoolInterface;
 use WithPattern\Singleton;
@@ -29,7 +31,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
         }
     }
 
-    public function getItems(array $keys = array()): array|\Traversable
+    public function getItems(array $keys = array()): array|Traversable
     {
         $collection = [];
         foreach ($keys as $key) {
@@ -57,7 +59,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                 return true;
             } elseif ($objectKey === $key && $objectKey == false) {
                 unset($objectKey, $value);
-                echo "Cache Item with key {$key} exists in pool but have no value..";
+                echo "Cache Item with key $key exists in pool but have no value..";
                 return true;
             }
         }
@@ -114,7 +116,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
 
     public function commit(): bool
     {
-        foreach ($this->deffer as $object){
+        foreach ($this->deffer as $object) {
             $_COOKIE[$object->getKey()] = $object->get();
         }
         return true;
