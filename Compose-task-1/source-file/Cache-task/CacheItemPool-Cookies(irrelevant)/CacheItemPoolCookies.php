@@ -7,28 +7,43 @@ use Traversable;
 class CacheItemPoolCookies extends Singleton implements CacheItemPoolInterface
 {
 
-    public function getItem($key): CacheItemInterface
+    public function getItem(string $key): CacheItemInterface
     {
-        if (array_key_exists($key, $_COOKIE)) {
-            return new CacheItem($key, $_COOKIE[$key]);#array_fill_keys([$key], $_COOKIE[$key]);
-        } else {
-            return  new CacheItem($key, '');#"There's no such key..";
+        $isTrue = false;
+        $searchedItem = null;
+        foreach ($_COOKIE as $objectKey => $value) {
+            if ($objectKey === $key) {
+                $isTrue = true;
+                $searchedItem = $objectKey;
+                $searchedItemValue = $value;
+                break;
+            }
         }
-
+        unset($objectKey, $value);
+        if ($isTrue) {
+            return new CacheItem($searchedItem, $searchedItemValue);
+        } else {
+            return new CacheItem($key, '');
+        }
     }
 
-    public function getItems(array $keys = array()): array|Traversable
+    public function getItems(array $keys = array()): array|\Traversable
     {
-        /*foreach ($keys as $key) {
-            if (!array_key_exists($key, $_COOKIE)) {
-                return "The $key is not in pool";
-            }
-        }*/
-        $array = [];
+        $collection = [];
         foreach ($keys as $key) {
-            $array += array_fill_keys([$key], $_COOKIE[$key]);
+            foreach ($_COOKIE as $objectKey => $value) {
+                if ($objectKey === $key) {
+                    $searchedItem = $objectKey;
+                    $searchedItemValue = $value;
+                    array_push($collection, new CacheItem($searchedItem, $searchedItemValue));
+                    unset($key);
+                    continue 2;
+                }
+            }
+            array_push($collection, new CacheItem($key, ''));
         }
-        return $array;
+        unset($objectKey, $value);
+        return $collection;
     }
 
     public function hasItem(string $key): bool

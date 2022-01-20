@@ -9,14 +9,6 @@ use WithPattern\Singleton;
 class CacheItemPoolSession extends Singleton implements CacheItemPoolInterface
 {
 
-    /*public function getItem($key): CacheItemInterface
-    {
-        if (array_key_exists($key, $_SESSION)) {
-            return new CacheItemSession($key, $_SESSION[$key]);
-        } else {
-            return new CacheItemSession($key, '');
-        }
-    }*/
     public function getItem(string $key): CacheItemInterface
     {
         $isTrue = false;
