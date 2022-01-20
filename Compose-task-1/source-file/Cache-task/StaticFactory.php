@@ -9,6 +9,11 @@ use InvalidArgumentException;
 
 class StaticFactory
 {
+
+    /**
+     * @param string $pool
+     * @return CacheItemPoolInterface
+     */
     public static function createPool(string $pool): CacheItemPoolInterface
     {
         $poolType = strtolower($pool);
