@@ -13,7 +13,7 @@ function prettyPrint($data){
 
 $cacheMySQL = StaticFactory::createPool('mysql');
 
-prettyPrint($cacheMySQL->getItem('newKey'));
+prettyPrint($cacheMySQL->getItem('newKey11111'));
 
 $cacheItem = StaticFactory::createPool('items');
 
