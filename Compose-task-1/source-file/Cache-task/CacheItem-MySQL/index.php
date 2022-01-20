@@ -20,8 +20,11 @@ $myDB = PDOAdapter::db();
 
 $queryGet = 'select cacheKey, cacheValue from cacheDB.items;';
 prettyPrint($myDB->query($queryGet)->fetchAll());
-$cache->save(new CacheItem('newKey',1112));
 
-prettyPrint($cache->getItem('newKey'));
+$cache->save(new CacheItem('someKey', [1,2,3]));
 
+prettyPrint($cache->getItem('someKey'));
 
+prettyPrint($cache->getItems(['key4', 'key3']));
+
+prettyPrint($cache->getItem('k123')->get());

@@ -13,14 +13,7 @@ class CacheItem implements CacheItemInterface
     public function __construct(string $key, mixed $value)
     {
         $this->key = $key;
-        $this->value = $value;
-    }
-
-    public function newDB(string $host, string $dbName): PDO
-    {
-        return new PDO('mysql:host=' . $host . ';dbname:' . $dbName, 'root', 'password', [
-            PDO::ATTR_DEFAULT_FETCH_MODE => 2
-        ]);
+        $this->value = serialize($value);
     }
 
     public function getKey(): string
@@ -31,7 +24,7 @@ class CacheItem implements CacheItemInterface
     public function get(): mixed
     {
         if ($this->isHit()) {
-            return $this->value;
+            return unserialize($this->value);
         } else {
             return false;
         }
@@ -48,8 +41,9 @@ class CacheItem implements CacheItemInterface
 
     public function set(mixed $value): static
     {
-        $this->newDB('127.0.0.1', 'cacheDB')->prepare("update cacheDB.items set cacheValue = ? where cacheKey = ?")->execute([$value, $this->key]);
-        $this->value = $value;
+        PDOAdapter::db()->prepare("update cacheDB.items set cacheValue = ? where cacheKey = ?")
+            ->execute([serialize($value), $this->key]);
+        $this->value = serialize($value);
         return $this;
     }
 }

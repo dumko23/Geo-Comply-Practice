@@ -8,8 +8,8 @@ use PDO;
 class PDOAdapter
 {
     private static PDO $db;
-    private static string $host = '127.0.0.1';
-    private static string $dbName = 'cacheDB';
+    private const HOST = '127.0.0.1';
+    private const DB_NAME = 'cacheDB';
 
     private function __construct()
     {
@@ -18,7 +18,6 @@ class PDOAdapter
     protected function __clone(): void
     {
     }
-
 
     /**
      * @throws Exception
@@ -31,7 +30,7 @@ class PDOAdapter
     public static function db(): PDO
     {
         if (!isset(self::$db)) {
-            self::$db = new PDO('mysql:host=' . self::$host . ';dbname:' . self::$dbName,
+            self::$db = new PDO('mysql:host=' . self::HOST . ';dbname:' . self::DB_NAME,
                 'root', 'password', [
                     PDO::ATTR_DEFAULT_FETCH_MODE => 2
                 ]);
@@ -42,7 +41,7 @@ class PDOAdapter
     public static function insertToDB($item)
     {
         static::db()->prepare('insert into cacheDB.items (cacheKey, cacheValue)
-                                values (?, ?)')->execute([$item->getKey(), $item->get()]);
+                                values (?, ?)')->execute([$item->getKey(), serialize($item->get())]);
     }
 
     public static function getFromDB(): bool|array

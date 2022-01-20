@@ -9,7 +9,13 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
 {
     private array $deffer = [];
 
+    public static function info(): array {
+        return PDOAdapter::getFromDB();
+    }
 
+    public static function getClassName():string{
+        return self::class;
+    }
 
     public function getItem(string $key): CacheItemInterface
     {
@@ -28,7 +34,6 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
             throw new InvalidArgumentException(
                 "Parameter key should only consist of 'A-Z', 'a-z', '0-9', '_', and '.'. Input was: " . $key);
         }
-        unset($arrayValue);
         if ($isTrue) {
             return new CacheItem($searchedItem, $searchedItemValue);
         } else {
@@ -46,7 +51,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                     if ($arrayValue['cacheKey'] === $key) {
                         $searchedItem = $arrayValue['cacheKey'];
                         $searchedItemValue = $arrayValue['cacheValue'];
-                        array_push($collection, new CacheItem($searchedItem, $searchedItemValue));
+                        $collection[] = new CacheItem($searchedItem, $searchedItemValue);
                         unset($key);
                         continue 2;
                     }
@@ -57,7 +62,6 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
             }
             array_push($collection, new CacheItem($key, ''));
         }
-        unset($arrayValue);
         return $collection;
     }
 
@@ -97,7 +101,6 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                     return true;
                 }
             }
-            unset($arrayValue);
             echo 'There is no such key..';
             return false;
         } else {
@@ -121,7 +124,6 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
                     "Parameter key should only consist of 'A-Z', 'a-z', '0-9', '_', and '.'. Input was: " . $key);
             }
         }
-        unset($arrayValue);
         return true;
     }
 
@@ -138,7 +140,7 @@ class CacheItemPool extends Singleton implements CacheItemPoolInterface
 
     public function saveDeferred(CacheItemInterface $item): bool
     {
-        array_push($this->deffer, new CacheItem($item->getKey(), $item->get()));
+        $this->deffer[] = new CacheItem($item->getKey(), $item->get());
         return true;
     }
 
