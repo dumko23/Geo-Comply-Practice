@@ -3,6 +3,7 @@
 namespace WithPattern;
 
 use http\Exception\InvalidArgumentException;
+use Traversable;
 
 class ChooseStrategy
 {
@@ -21,22 +22,22 @@ class ChooseStrategy
         return $this;
     }
 
-    public function printGetItem(string $key): static
+    public function printGetItem(string $key): CacheItemInterface
     {
         echo "Getting item using " . $this->strategy::getClassName() . " strategy. Result is:";
         echo '<pre>';
         print_r($this->strategy->getItem($key));
         echo '</pre>';
-        return $this;
+        return $this->strategy->getItem($key);
     }
 
-    public function printGetItems(array $keys): static
+    public function printGetItems(array $keys): Traversable|array
     {
         echo "Getting items using " . $this->strategy::getClassName() . " strategy. Result is:";
         echo '<pre>';
         print_r($this->strategy->getItems($keys));
         echo '</pre>';
-        return $this;
+        return $this->strategy->getItems($keys);
     }
 
     public function printHasItem(string $key): static
@@ -98,6 +99,15 @@ class ChooseStrategy
         echo "Committing deferred items to pool using " . $this->strategy::getClassName() . " strategy. Result is:";
         echo '<pre>';
         var_dump($this->strategy->commit());
+        echo '</pre>';
+        return $this;
+    }
+
+    public function printGetPoolInfo(): static
+    {
+        echo "Getting pool info using " . $this->strategy::getClassName() . " strategy. Result is:";
+        echo '<pre>';
+        var_dump($this->strategy::info());
         echo '</pre>';
         return $this;
     }
