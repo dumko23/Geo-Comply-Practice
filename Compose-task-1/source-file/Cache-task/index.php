@@ -3,36 +3,41 @@ session_start();
 
 use CacheMYSQL\CacheItemSQL;
 use WithPattern\ChooseStrategy;
+use WithPattern\TransformToCSV;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
+$csvDir = __DIR__ . '/Source.csv';
+$transferToCSV = new TransformToCSV();
+$transferToCSV->openCSV($csvDir);
+
 $myStrategy = new ChooseStrategy('mysql');
 
-$myStrategy->printGetItem('newKey');
-$myStrategy->printGetItems(['key4', 'key3', 'key2']);
-$myStrategy->printHasItem('newKey')
-    ->printSave(new CacheItemSQL('AnotherKey', 'value'))
-    ->printDeleteItem('newKey1112323')
-    ->printDeleteItems(['newKey11111', 'newKey'])
-    ->printGetPoolInfo();
+$myStrategy->GetItem('newKey');
+$myStrategy->GetItems(['key4', 'key3', 'key2']);
+$myStrategy->HasItem('newKey')
+    ->Save(new CacheItemSQL('AnotherKey', 'value'))
+    ->DeleteItem('newKey1112323')
+    ->DeleteItems(['newKey11111', 'newKey'])
+    ->GetPoolInfo();
 
 /*$myStrategy->setStrategy('session')
-    ->printGetItem('newKey');
-    $myStrategy->printGetItems(['key4', 'key3', 'key2']);
-$myStrategy->printHasItem('newKey')
-    ->printSave(new CacheItemSQL('AnotherKey', 'value'))
-    ->printDeleteItem('newKey1112323')
-    ->printDeleteItems(['newKey11111', 'newKey'])
-    ->printGetPoolInfo();
+    ->GetItem('newKey');
+    $myStrategy->GetItems(['key4', 'key3', 'key2']);
+$myStrategy->HasItem('newKey')
+    ->Save(new CacheItemSQL('AnotherKey', 'value'))
+    ->DeleteItem('newKey1112323')
+    ->DeleteItems(['newKey11111', 'newKey'])
+    ->GetPoolInfo();
 */
 
 /*$myStrategy->setStrategy('items')
-    ->printGetItem('newKey');
-    $myStrategy->printGetItems(['key4', 'key3', 'key2']);
-$myStrategy->printHasItem('newKey')
-    ->printSave(new CacheItemSQL('AnotherKey', 'value'))
-    ->printDeleteItem('newKey1112323')
-    ->printDeleteItems(['newKey11111', 'newKey'])
-    ->printGetPoolInfo();*/
+    ->GetItem('newKey');
+    $myStrategy->GetItems(['key4', 'key3', 'key2']);
+$myStrategy->HasItem('newKey')
+    ->Save(new CacheItemSQL('AnotherKey', 'value'))
+    ->DeleteItem('newKey1112323')
+    ->DeleteItems(['newKey11111', 'newKey'])
+    ->GetPoolInfo();*/
 
 

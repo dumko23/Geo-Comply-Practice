@@ -21,7 +21,7 @@ class StaticFactory
             'session' => CacheItemPoolSession::getInstance(),
             'items' => CacheItemPool::getInstance(),
             'mysql' => CacheItemPoolSQL::getInstance(),
-            default => throw new InvalidArgumentException('There is no such pool type in stock. Try: sessions, cookies, items or mysql'),
+            default => throw new InvalidArgumentException('There is no such pool type in stock. Try: sessions, items or mysql'),
         };
     }
 }

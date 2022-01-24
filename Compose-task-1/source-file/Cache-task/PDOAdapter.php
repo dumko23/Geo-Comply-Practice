@@ -8,7 +8,7 @@ use PDO;
 class PDOAdapter
 {
     private static PDO $db;
-    private const HOST = 'mysql';
+    private const HOST = '127.0.0.1';
     private const DB_NAME = 'cacheDB';
 
     private function __construct()

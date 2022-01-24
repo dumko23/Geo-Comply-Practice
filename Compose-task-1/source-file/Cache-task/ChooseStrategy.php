@@ -2,7 +2,6 @@
 
 namespace WithPattern;
 
-use http\Exception\InvalidArgumentException;
 use Traversable;
 
 class ChooseStrategy
@@ -34,12 +33,10 @@ class ChooseStrategy
      * @param string $key - key of the searched item.
      * @return CacheItemInterface to be able to use item's methods.
      */
-    public function printGetItem(string $key): CacheItemInterface
+    public function GetItem(string $key): CacheItemInterface
     {
         echo "Getting item using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        print_r($this->strategy->getItem($key));
-        echo '</pre>';
+        $this->prettyPrint($this->strategy->getItem($key));
         return $this->strategy->getItem($key);
     }
 
@@ -47,12 +44,10 @@ class ChooseStrategy
      * @param array $keys - array of searched items keys.
      * @return Traversable|array - to interact with items in array.
      */
-    public function printGetItems(array $keys): Traversable|array
+    public function GetItems(array $keys): Traversable|array
     {
         echo "Getting items using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        print_r($this->strategy->getItems($keys));
-        echo '</pre>';
+        $this->prettyPrint($this->strategy->getItems($keys));
         return $this->strategy->getItems($keys);
     }
 
@@ -61,12 +56,10 @@ class ChooseStrategy
      * @return $this - as method 'HasItem' return bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printHasItem(string $key): static
+    public function HasItem(string $key): static
     {
         echo "Checking item in pool using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->hasItem($key));
-        echo '</pre>';
+        $this->prettyVarDump($this->strategy->hasItem($key));
         return $this;
     }
 
@@ -74,12 +67,10 @@ class ChooseStrategy
      * @return $this - as method 'Clear' returns bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printClear(): static
+    public function Clear(): static
     {
         echo "Clearing cache using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->clear());
-        echo '</pre>';
+        $this->prettyVarDump($this->strategy->clear());
         return $this;
     }
 
@@ -88,12 +79,10 @@ class ChooseStrategy
      * @return $this - as method 'DeleteItem' returns bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printDeleteItem(string $key): static
+    public function DeleteItem(string $key): static
     {
-        echo "Deleting item using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->deleteItem($key));
-        echo '</pre>';
+        echo "Deleting item using " . $this->strategy::getClassName() . " strategy. Result is:" . PHP_EOL;
+        $this->prettyVarDump($this->strategy->deleteItem($key));
         return $this;
     }
 
@@ -102,12 +91,10 @@ class ChooseStrategy
      * @return $this - as method 'DeleteItems' returns bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printDeleteItems(array $keys): static
+    public function DeleteItems(array $keys): static
     {
-        echo "Deleting items using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->deleteItems($keys));
-        echo '</pre>';
+        echo "Deleting items using " . $this->strategy::getClassName() . " strategy. Result is:" . PHP_EOL;
+        $this->prettyVarDump($this->strategy->deleteItems($keys));
         return $this;
     }
 
@@ -116,12 +103,10 @@ class ChooseStrategy
      * @return $this - as method 'Save' returns bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printSave(CacheItemInterface $item): static
+    public function Save(CacheItemInterface $item): static
     {
-        echo "Caching using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->save($item));
-        echo '</pre>';
+        echo "Caching using " . $this->strategy::getClassName() . " strategy. Result is:" . PHP_EOL;
+        $this->prettyVarDump($this->strategy->save($item));
         return $this;
     }
 
@@ -130,12 +115,10 @@ class ChooseStrategy
      * @return $this - as method 'SaveDeffer' returns bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printSaveDeferred(CacheItemInterface $item): static
+    public function SaveDeferred(CacheItemInterface $item): static
     {
         echo "Saving deffer item using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->saveDeferred($item));
-        echo '</pre>';
+        $this->prettyVarDump($this->strategy->saveDeferred($item));
         return $this;
     }
 
@@ -143,25 +126,32 @@ class ChooseStrategy
      * @return $this - as method 'Commit' returns bool,
      * returning $this making able to continue method chaining if needed.
      */
-    public function printCommit(): static
+    public function Commit(): static
     {
         echo "Committing deferred items to pool using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy->commit());
-        echo '</pre>';
+        $this->prettyVarDump($this->strategy->commit());
         return $this;
     }
 
     /**
      * @return mixed - returns pool to interact.
      */
-    public function printGetPoolInfo(): mixed
+    public function GetPoolInfo(): mixed
     {
         echo "Getting pool info using " . $this->strategy::getClassName() . " strategy. Result is:";
-        echo '<pre>';
-        var_dump($this->strategy::info());
-        echo '</pre>';
+        $this->prettyVarDump($this->strategy::info());
         return $this->strategy::info();
     }
 
+    private function prettyPrint($data){
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
+
+    private function prettyVarDump($data){
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
+    }
 }
